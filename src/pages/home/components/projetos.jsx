@@ -13,7 +13,7 @@ export default function Projetos() {
             </div>
             <div className="list">
                 <div className="card" onClick={() => openLink({target: "https://joaofilipesoares45.github.io/webshop/"})}>
-                    <img src={baseUrl + "/about1.jpg"} alt="" />
+                    <img src={baseUrl + "/background.jpg"} alt="" />
 
                     <div className="info">
                         <h4>Site de Vendas</h4>
@@ -28,7 +28,7 @@ export default function Projetos() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src={baseUrl + "/about1.jpg"} alt="" />
+                    <img src={baseUrl + "/background.jpg"} alt="" />
 
                     <div className="info">
                         <h4>DashBoard</h4>
@@ -41,7 +41,7 @@ export default function Projetos() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src={baseUrl + "/about1.jpg"} alt="" />
+                    <img src={baseUrl + "/background.jpg"} alt="" />
 
                     <div className="info">
                         <h4>Calculadora de IMC</h4>
@@ -54,7 +54,7 @@ export default function Projetos() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src={baseUrl + "/about1.jpg"} alt="" />
+                    <img src={baseUrl + "/background.jpg"} alt="" />
 
                     <div className="info">
                         <h4>Login de Usuario</h4>
