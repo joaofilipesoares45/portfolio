@@ -1,10 +1,15 @@
-import { baseUrl, formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
+import { formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { faArrowRight, faEllipsis, faLink } from "@fortawesome/free-solid-svg-icons"
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons"
+import { useContext } from "react";
+import { DataContext } from "../../../context/DataContext";
 
 
 export default function Projetos() {
+
+    const { projetos } = useContext(DataContext)
     return (
         <section className="sect projetos" id="projetos">
             <div className="head">
@@ -12,60 +17,40 @@ export default function Projetos() {
                 <p>Explore alguns dos projetos que já trabalhei, para ver mais informações basta clicar no card do projeto!</p>
             </div>
             <div className="list">
-                <div className="card" onClick={() => openLink({target: "https://joaofilipesoares45.github.io/webshop/"})}>
-                    <img src={baseUrl + "/background.jpg"} alt="" />
 
-                    <div className="info">
-                        <h4>Site de Vendas</h4>
-                        <p>Deseja ter seu negocio nas plataformas digitais? Esse site é a solução!</p>
-                        <div>
-                            <span className="tec html">Html</span>
-                            <span className="tec css">Css</span>
-                            <span className="tec react">React</span>
-                            <span className="tec git">Git</span>
-                            <span className="tec github">GitHub</span>
-                        </div>
-                    </div>
-                </div>
-                <div className="card">
-                    <img src={baseUrl + "/background.jpg"} alt="" />
+                {projetos.map((item, index) => {
+                    const { nome, link, resumo, tecnologias, imgs } = item
+                    return (
+                        <div className="card" key={"project" + index}>
+                            <div className="img" style={{ width: 326.8, minHeight: 183.75 }}>
+                                <img src={imgs[0]} alt="" onLoad={({ target }) => {
+                                    target.parentElement.setAttribute("load", "")
+                                }} />
+                            </div>
+                            <div className="info">
+                                <h4>{nome}</h4>
+                                <p>{resumo}</p>
+                                <div>
+                                    {tecnologias.map((el) => {
+                                        return (
+                                            <span className={"tec " + el} key={el + "tecc"}>{el}</span>
+                                        )
+                                    })}
+                                </div>
+                            </div>
 
-                    <div className="info">
-                        <h4>DashBoard</h4>
-                        <p>Tenha uma visão geral do seu negocio de forma rapida e intuitiva!</p>
-                        <div>
-                            <span className="tec html">Html</span>
-                            <span className="tec css">Css</span>
-                            <span className="tec js">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-                <div className="card">
-                    <img src={baseUrl + "/background.jpg"} alt="" />
+                            <nav className="options">
+                                <FontAwesomeIcon icon={faLink} onClick={() => openLink({ target: link })} />
+                                <FontAwesomeIcon icon={faWhatsapp}
+                                    onClick={() => {
+                                        whatsMsg("86988667039", "Estou interessado no projeto: " + nome)
+                                    }} />
 
-                    <div className="info">
-                        <h4>Calculadora de IMC</h4>
-                        <p>Resolva rapidamente calculos de imc!</p>
-                        <div>
-                            <span className="tec html">Html</span>
-                            <span className="tec css">Css</span>
-                            <span className="tec js">JavaScript</span>
+                                <FontAwesomeIcon icon={faEllipsis}/>
+                            </nav>
                         </div>
-                    </div>
-                </div>
-                <div className="card">
-                    <img src={baseUrl + "/background.jpg"} alt="" />
-
-                    <div className="info">
-                        <h4>Login de Usuario</h4>
-                        <p>Padrão para uma tela de login!</p>
-                        <div>
-                            <span className="tec html">Html</span>
-                            <span className="tec css">Css</span>
-                            <span className="tec react">React</span>
-                        </div>
-                    </div>
-                </div>
+                    )
+                })}
             </div>
 
             <nav className="contact">
@@ -75,10 +60,10 @@ export default function Projetos() {
                     const text = formCaptureData(e.target).msgtext
                     if (text) {
                         whatsMsg("86988667039", text)
-                    }else{
+                    } else {
                         alert("Digite algo na caixa de texto")
                     }
-                    
+
                 }}>
 
                     <textarea name="msgtext" placeholder="Digite aqui sua mensagem!"></textarea>

@@ -78,7 +78,8 @@ export const whatsMsg = (number, msg) => {
     window.open(`https://api.whatsapp.com/send/?phone=${number}&text=${msg}`)
 }
 
-export const openLink = ({ target }) => {    
+export const openLink = ({ target }) => {
+    
     if (target.tagName) {
         const link = target.getAttribute('link')
         window.open(link)
@@ -87,7 +88,6 @@ export const openLink = ({ target }) => {
             window.open(target)
         }
     }
-
 }
 
 export const sortListHour = (list) => {

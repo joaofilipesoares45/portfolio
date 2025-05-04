@@ -1,0 +1,495 @@
+.page.admin {
+    font-family: "Cascadia Mono", sans-serif !important;
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: blue;
+        color: white;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.787);
+
+        h1 {
+            font-size: 1.3rem;
+            a{
+                color: rgb(255, 255, 255);
+                padding: 10px;
+            }
+        }
+
+        .options {
+            display: flex;
+            gap: 5px;
+
+            button {
+                font-family: "Cascadia Mono", sans-serif !important;
+                font-weight: 550;
+                padding: 10px;
+                background-color: rgb(3, 3, 66);
+                color: white;
+                --back: rgb(0, 0, 0);
+            }
+        }
+    }
+
+    .modal.new-project {
+        background-color: rgba(0, 0, 0, 0.415);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &[open] form {
+            animation: var(--show-top);
+        }
+
+        form {
+            background-color: rgb(76, 76, 216);
+            color: white;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.327);
+            padding: 10px;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 5px;
+
+            h3 {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+            }
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3px;
+
+                    label {
+                        font-size: .9rem;
+                    }
+
+                    input {
+                        font-family: "Cascadia Mono", sans-serif !important;
+                        background-color: white;
+                        padding: 10px 5px;
+                        width: 100%;
+                    }
+
+                    textarea {
+                        font-family: "Cascadia Mono", sans-serif !important;
+                        padding: 5px;
+                        min-height: 100px;
+                        border-radius: 3px;
+                    }
+                }
+
+                .tags {
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 10px;
+                    span {
+                        font-size: .7rem;
+
+                        &[selected] {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .img-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                background-color: rgba(3, 63, 158, 0.461);
+                padding: 10px;
+                margin-top: 10px;
+                border-radius: 3px;
+                max-height: 120px;
+                overflow-y: scroll;
+
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+
+                    &:hover svg {
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+
+                    img {
+                        max-width: 50px;
+                        border-radius: 3px;
+                    }
+
+                    svg {
+                        position: absolute;
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: .2s;
+                        padding: 5px;
+                    }
+                }
+
+            }
+
+            nav {
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 10px;
+
+                button {
+                    padding: 10px;
+                    font-size: 500;
+                    font-family: "Cascadia Mono", sans-serif !important;
+                    --back: rgb(25, 10, 167);
+                    --color: white;
+                }
+            }
+        }
+    }
+
+    .sect {
+        margin: 10px;
+        border-radius: 10px;
+
+        padding: 10px;
+        background-color: rgb(127, 185, 255);
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.407);
+        padding-block: 60px;
+
+        &.projetos {
+            .list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+                margin-bottom: 30px;
+
+                div.card {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    gap: 5px;
+                    align-items: center;
+                    padding: 10px;
+                    width: 350px;
+                    background-color: white;
+                    border-radius: 3px;
+                    border: solid 2px rgb(0, 0, 141);
+                    transition: .2s;
+                    position: relative;
+
+                    .img {
+                        height: 100%;
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: center;
+                        border-radius: 5px;
+
+                        img {
+                            max-width: 100%;
+                            border-radius: 5px;
+                        }
+                    }
+
+                    .info {
+                        width: 100%;
+
+                        h4 {
+                            font-size: 1.3rem;
+                            margin-bottom: 10px;
+                        }
+
+                        p {
+                            word-break: break-word;
+                            font-size: .9rem;
+                            margin-bottom: 10px;
+                        }
+
+                        div {
+                            display: flex;
+                            gap: 5px;
+                        }
+                    }
+
+                    nav {
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+                        padding: 10px;
+                        display: flex;
+                        gap: 5px;
+
+                        svg {
+                            padding: 10px 10.5px;
+                            background-color: black;
+                            color: white;
+                            border-radius: 50%;
+
+                            &.fa-link{
+                                padding: 10px 8.5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width: 500px) {
+    .page.admin {
+        font-family: "Cascadia Mono", sans-serif !important;
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.787);
+
+            .options {
+                display: flex;
+                gap: 5px;
+
+                button {
+                    font-family: "Cascadia Mono", sans-serif !important;
+                    font-weight: 550;
+                    padding: 10px;
+                    background-color: rgb(3, 3, 66);
+                    color: white;
+                    --back: rgb(0, 0, 0);
+                }
+            }
+        }
+
+        .modal.new-project {
+            background-color: rgba(0, 0, 0, 0.415);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &[open] form {
+                animation: none;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                background-color: rgb(76, 76, 216);
+                color: white;
+                box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.327);
+                padding: 10px;
+                width: 100%;
+                max-width: 500px;
+                height: 100%;
+                border-radius: 0px;
+
+                h3 {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+                }
+
+                .inputs {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3px;
+
+                        label {
+                            font-size: .9rem;
+                        }
+
+                        input {
+                            font-family: "Cascadia Mono", sans-serif !important;
+                            background-color: white;
+                            padding: 10px 5px;
+                            width: 100%;
+                        }
+
+                        textarea {
+                            font-family: "Cascadia Mono", sans-serif !important;
+                            padding: 5px;
+                            min-height: 100px;
+                            border-radius: 3px;
+                        }
+                    }
+                }
+
+                nav {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-top: 10px;
+
+                    button {
+                        padding: 10px;
+                        font-size: 500;
+                        font-family: "Cascadia Mono", sans-serif !important;
+                        --back: rgb(25, 10, 167);
+                        --color: white;
+                    }
+                }
+            }
+        }
+
+        .sect {
+            margin: 10px;
+            border-radius: 10px;
+
+            padding: 10px;
+            background-color: rgb(127, 185, 255);
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.407);
+            padding-block: 60px;
+
+            &.projetos {
+                .head {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 20px;
+
+                    h2 {
+                        font-size: 3rem;
+                        margin-bottom: 15px;
+                    }
+
+                    p {
+                        font-size: .9rem;
+                    }
+                }
+
+                .list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 30px;
+                    margin-bottom: 30px;
+
+                    div.card {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 10px;
+                        width: 350px;
+                        background-color: white;
+                        border-radius: 3px;
+                        border: solid 2px rgb(0, 0, 141);
+                        cursor: pointer;
+                        transition: .2s;
+
+                        &:hover {
+                            scale: 1.005;
+
+                            img::after {
+                                opacity: 1;
+                            }
+                        }
+
+                        img {
+                            max-width: 100%;
+                            border-radius: 5px;
+                            margin-bottom: 10px;
+
+                            &::after {
+                                content: "";
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                background-color: black;
+                            }
+                        }
+
+                        .info {
+                            width: 100%;
+
+                            h4 {
+                                font-size: 1.3rem;
+                                margin-bottom: 10px;
+                            }
+
+                            p {
+                                word-break: break-word;
+                                font-size: .9rem;
+                                margin-bottom: 10px;
+                            }
+
+                            div {
+                                display: flex;
+                                gap: 5px;
+                            }
+                        }
+                    }
+                }
+
+                nav.contact {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+
+                    h3 {
+                        font-weight: 450;
+                        text-align: center;
+                        font-size: .9rem;
+                        width: 100%;
+                        max-width: 800px;
+                    }
+
+                    form {
+                        position: relative;
+                        width: 100%;
+                        max-width: 400px;
+
+                        textarea {
+                            width: 100%;
+                            min-height: 100px;
+                            font-size: 1rem;
+                            padding: 10px;
+                            border-radius: 5px;
+                            outline: none;
+                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.146);
+                            background-color: rgb(255, 255, 255);
+                        }
+
+                        button {
+                            padding: 10px;
+                            font-size: .8rem;
+                            gap: 10px;
+                            position: absolute;
+                            bottom: 5px;
+                            right: 0px;
+
+                            --color: white;
+                            --back: rgb(0, 149, 67);
+
+                            svg {
+                                transition: initial
+                            }
+                        }
+                    }
+
+
+                }
+            }
+
+        }
+    }
+}

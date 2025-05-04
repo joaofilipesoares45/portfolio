@@ -1,9 +1,11 @@
+import { DataProvider } from "./context/DataContext"
 import RouterApp from "./Routes"
 
 function App() {
-  
   return (
-    <RouterApp/>
+    <DataProvider>
+      <RouterApp/>
+    </DataProvider>
   )
 }
 

@@ -1,0 +1,481 @@
+.page.log-page {
+    .content {
+        height: 100%;
+        background-color: rgb(100, 129, 225);
+        display: flex;
+        justify-content: flex-end;
+
+        .banner {
+            min-height: calc(100vh - (76px));
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(86, 104, 208);
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.407);
+
+            position: relative;
+
+
+            .animated-arrow {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                bottom: 120px;
+
+                svg {
+                    color: rgba(255, 255, 255, 0.689);
+                    padding: 6px 5px;
+                    border-radius: 50%;
+                    animation: move-arrow 1s infinite;
+                    font-size: 2rem;
+                    background-color: rgba(255, 255, 255, 0.226);
+                    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.141);
+
+                    &.fa-arrow-down {
+                        padding: 4px 8px;
+                    }
+                }
+            }
+
+            h1 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: white;
+                font-family: "Cascadia Mono", sans-serif !important;
+                margin-top: -70px;
+                border-bottom: solid 3px rgb(255, 255, 255);
+                padding-bottom: 20px;
+                width: 80%;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    background-color: rgb(255, 255, 255);
+                    padding: 10px;
+                    position: absolute;
+                    border-radius: 50%;
+                    bottom: -11px;
+                    animation: moveX 10s linear infinite;
+                }
+
+                img {
+                    max-width: 200px;
+                    margin-bottom: 10px;
+                    border-radius: 50%;
+                }
+
+                span {
+                    font-size: 1rem;
+                }
+            }
+
+            h2 {
+                display: flex;
+                gap: 15px;
+                margin-top: 20px;
+
+                button {
+                    background-color: transparent;
+                    font-size: 1.8rem;
+                    color: rgba(255, 255, 255, 0.713);
+                    --color: white;
+
+                    &:hover {
+                        scale: 1.05;
+                    }
+
+                    svg {
+                        transition: initial;
+                        pointer-events: none;
+                    }
+                }
+            }
+
+            footer {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                overflow: clip;
+
+                div.marquee {
+                    display: flex;
+                    padding: 5px 10px;
+                    padding-left: 4.8rem;
+                    gap: 4.8rem;
+                    width: max-content;
+                    animation: move-marquee 15s linear infinite;
+                    background-color: rgba(0, 66, 165, 0.242);
+
+                    span {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        font-size: .8rem;
+                        color: rgba(255, 255, 255, 0.481);
+                        transition: .2s;
+
+                        &:hover {
+                            color: white;
+                        }
+
+                        svg {
+                            font-size: 2.5rem;
+                            cursor: initial;
+                        }
+                    }
+                }
+            }
+        }
+
+        .form {
+            font-family: "Cascadia Mono", sans-serif !important;
+            background-color: white;
+            box-shadow: 0 0 5px black;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: var(--show-left);
+
+            .component {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% - 20px);
+                background-color: rgba(20, 94, 255, 0.409);
+                border-radius: 3px;
+                padding: 10px;
+
+                .banner {
+                    display: none;
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    h3 {
+                        font-size: 1.4rem;
+                        margin-bottom: 10px;
+                    }
+
+                    .inputs {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 3px;
+
+                            label {
+                                font-size: .9rem;
+                            }
+
+                            input {
+                                background-color: rgba(4, 0, 255, 0.256);
+                                padding: 10px 5px;
+                                font-family: "Cascadia Mono", sans-serif !important;
+                            }
+                        }
+                    }
+
+                    nav {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-top: 10px;
+
+                        button {
+                            font-size: .9rem;
+                            padding: 10px;
+                            width: max-content;
+
+                            align-self: flex-end;
+                            font-weight: 500;
+
+                            background-color: rgb(0, 0, 135);
+                            color: white;
+
+                            --back: white;
+                            --color: rgb(0, 0, 135);
+                            font-family: "Cascadia Mono", sans-serif !important;
+                        }
+
+                        p {
+                            font-size: .7rem;
+
+                            &:hover {
+                                text-decoration: underline;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .go-to-home {
+            font-family: "Cascadia Mono", sans-serif;
+            position: absolute;
+            padding: 10px;
+        }
+    }
+}
+
+@media (max-width:700px) {
+    .page.log-page {
+        .content {
+            height: 100%;
+            background-color: rgb(100, 129, 225);
+            display: flex;
+            justify-content: flex-end;
+
+            .banner {
+                min-height: calc(100vh) !important;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                background-color: rgb(86, 104, 208);
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.407);
+                display: none;
+
+                position: relative;
+
+                h1 {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    color: white;
+                    font-family: "Cascadia Mono", sans-serif !important;
+                    margin-top: 10px;
+                    border-bottom: solid 3px rgb(255, 255, 255);
+                    padding-bottom: 20px;
+                    width: 80%;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        background-color: rgb(255, 255, 255);
+                        padding: 10px;
+                        position: absolute;
+                        border-radius: 50%;
+                        bottom: -11px;
+                        animation: moveX 10s linear infinite;
+                    }
+
+                    img {
+                        max-width: 150px;
+                        margin-bottom: 10px;
+                        border-radius: 50%;
+                    }
+
+                    span {
+                        font-size: 1rem;
+                    }
+                }
+
+                h2 {
+                    display: flex;
+                    gap: 15px;
+                    margin-top: 20px;
+
+                    button {
+                        background-color: transparent;
+                        font-size: 1.8rem;
+                        color: rgba(255, 255, 255, 0.713);
+                        --color: white;
+
+                        &:hover {
+                            scale: 1.05;
+                        }
+
+                        svg {
+                            transition: initial;
+                            pointer-events: none;
+                        }
+                    }
+                }
+
+                footer {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    overflow: clip;
+
+                    div.marquee {
+                        display: flex;
+                        padding: 5px 10px;
+                        padding-left: 4.8rem;
+                        gap: 4.8rem;
+                        width: max-content;
+                        animation: move-marquee 15s linear infinite;
+                        background-color: rgba(0, 66, 165, 0.242);
+
+                        span {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            font-size: .8rem;
+                            color: rgba(255, 255, 255, 0.481);
+                            transition: .2s;
+
+                            &:hover {
+                                color: white;
+                            }
+
+                            svg {
+                                font-size: 2.5rem;
+                                cursor: initial;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .form {
+                font-family: "Cascadia Mono", sans-serif !important;
+                background-color: rgba(0, 0, 0, 0.475);
+                backdrop-filter: blur(3px);
+                box-shadow: 0 0 5px black;
+                width: 100%;
+                max-width: none;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                animation: none;
+                position: absolute;
+
+                .component {
+                    width: calc(100%);
+                    height: 100%;
+                    background-color: rgb(207, 228, 255);
+                    border-radius: 0px;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    animation: var(--show-top);
+
+                    .banner {
+                        display: flex;
+                        box-shadow: none;
+                        min-height: min-content !important;
+                        padding: 10px;
+                        border-radius: 5px;
+                        margin-bottom: 10px;
+
+                        img {
+                            max-width: 100px;
+                        }
+
+                        h1 {
+                            margin-top: 0px;
+                            font-size: 1.2rem;
+                            border-bottom: solid 2px;
+                            width: calc(100% - 20px);
+                            max-width: 300px;
+                            padding-bottom: 10px;
+
+                            &::after {
+                                padding: 7px;
+                                bottom: -7.5px;
+                            }
+
+                            span {
+                                font-size: .8rem;
+                            }
+                        }
+
+                        h2 {
+                            margin-top: 10px;
+
+                            svg {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        background-color: rgba(20, 94, 255, 0.409);
+                        padding: 10px;
+                        border-radius: 5px;
+                        width: calc(100%);
+
+                        h3 {
+                            font-size: 1.4rem;
+                            margin-bottom: 10px;
+                        }
+
+                        .inputs {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px;
+
+                            div {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 3px;
+
+                                label {
+                                    font-size: .9rem;
+                                }
+
+                                input {
+                                    background-color: rgba(4, 0, 255, 0.256);
+                                    padding: 10px 5px;
+                                    font-family: "Cascadia Mono", sans-serif !important;
+                                }
+                            }
+                        }
+
+                        nav {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-top: 10px;
+
+                            button {
+                                font-size: .9rem;
+                                padding: 10px;
+                                width: max-content;
+                                align-self: flex-end;
+                                font-weight: 500;
+                                background-color: rgb(0, 0, 135);
+                                color: white;
+                                --back: white;
+                                --color: rgb(0, 0, 135);
+                                font-family: "Cascadia Mono", sans-serif !important;
+
+                            }
+
+                            p {
+                                font-size: .7rem;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

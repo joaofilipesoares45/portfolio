@@ -1,4 +1,4 @@
-import { baseUrl } from "../../../utils/functions";
+import { baseUrl, openModal } from "../../../utils/functions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleDown } from "@fortawesome/free-solid-svg-icons"
 
@@ -23,7 +23,7 @@ export default function Sobre() {
                         </div>
 
                         <p className="pppp">Abaixo o link para download do currículo: </p>
-                        <button>Baixar CV <FontAwesomeIcon icon={faArrowAltCircleDown} /> </button>
+                        <button onClick={() => openModal("download-cv")}>Baixar CV <FontAwesomeIcon icon={faArrowAltCircleDown} /> </button>
                     </div>
                 </div>
             </div>
