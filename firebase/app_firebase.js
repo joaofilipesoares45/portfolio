@@ -8,10 +8,9 @@ import { getAnalytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
 // Initialize Firebase
 export const app = initializeApp({
-  apiKey: "AIzaSyCVC15fm5n5739TwqBu5wrNt9lr_5gfLfo",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "portfolio-jf-viana.firebaseapp.com",
   projectId: "portfolio-jf-viana",
   storageBucket: "portfolio-jf-viana.firebasestorage.app",
