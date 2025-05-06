@@ -13,7 +13,7 @@ export default function LogPage() {
             <div className="content">
                 <div className="banner">
                     <h1>
-                        <img src={"public/perfil.jpg"} alt="" />
+                        <img src={"/portfolio/perfil.jpg"} alt="" />
                         João Filipe
                         <span>{"<"} Desenvolvedor Front-end {"/>"}</span>
                     </h1>

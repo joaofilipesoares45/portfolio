@@ -1,4 +1,4 @@
-import { baseUrl, formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
+import { formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faWhatsapp, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { addDoc, collection, getDocs } from "firebase/firestore";
@@ -24,7 +24,7 @@ export default function CreateAcount({ setComponent }) {
         if (localStorage.getItem("portfolio:user") !== null) {
             localStorage.setItem("portfolio:user", JSON.stringify(res2.id))
         }
-        navigate(baseUrl)
+        navigate("/")
     }
     
     return (

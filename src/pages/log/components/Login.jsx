@@ -1,4 +1,4 @@
-import { baseUrl, formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
+import { formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faWhatsapp, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { collection, getDocs } from "firebase/firestore";
@@ -23,7 +23,7 @@ export default function Login({ setComponent }) {
         if (user && localStorage.getItem("portfolio:user") !== null) {
             localStorage.setItem("portfolio:user", JSON.stringify(user.id))
         }
-        navigate(baseUrl)
+        navigate("/")
     }
 
     return (

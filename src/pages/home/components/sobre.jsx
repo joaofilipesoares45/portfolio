@@ -6,7 +6,7 @@ export default function Sobre() {
     return (
         <section className="sect sobre" id="sobre">
             <div className="info">
-                <img src={"public/about2.jpg"} alt="" />
+                <img src={"/portfolio/about2.jpg"} alt="" />
 
                 <div className="declare">
                     <h2>Sobre</h2>

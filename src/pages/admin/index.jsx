@@ -13,7 +13,7 @@ export default function AdminPage() {
     const navigate = useNavigate()
 
     if (!usuarioAtual) {
-        navigate(baseUrl)
+        navigate("/")
     }
 
     useEffect(() => {
@@ -21,7 +21,7 @@ export default function AdminPage() {
             const userDoc = doc(firestore, "usuarios", usuarioAtual)
             const user = (await getDoc(userDoc)).data()
             if (!user.acesso) {
-                navigate(baseUrl)
+                navigate("/")
             }
         }
         getUser()
