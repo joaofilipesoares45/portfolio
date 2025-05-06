@@ -20,10 +20,10 @@ export default function Login({ setComponent }) {
         if (!user) {
             return
         }
-        if (user && localStorage.getItem("portfolio:user") !== null) {
+        if (user) {
             localStorage.setItem("portfolio:user", JSON.stringify(user.id))
+            navigate("/")
         }
-        navigate("/")
     }
 
     return (

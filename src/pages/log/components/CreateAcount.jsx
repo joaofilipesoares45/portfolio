@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faWhatsapp, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../../../firebase/app_firebase";
-import {useNavigate} from "react-router"
+import { useNavigate } from "react-router"
 
 export default function CreateAcount({ setComponent }) {
     const navigate = useNavigate()
@@ -21,12 +21,11 @@ export default function CreateAcount({ setComponent }) {
         }
 
         const res2 = await addDoc(usersRef, data)
-        if (localStorage.getItem("portfolio:user") !== null) {
-            localStorage.setItem("portfolio:user", JSON.stringify(res2.id))
-        }
+
+        localStorage.setItem("portfolio:user", JSON.stringify(res2.id))
         navigate("/")
     }
-    
+
     return (
         <div className="component create-acount">
             <div className="banner">
