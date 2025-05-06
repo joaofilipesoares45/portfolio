@@ -6,8 +6,6 @@ import { baseUrl, openLink, whatsMsg } from "../../utils/functions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCss, faHtml5, faJs, faReact, faVuejs, faGithub, faLinkedin, faWhatsapp, faInstagram } from "@fortawesome/free-brands-svg-icons"
 
-
-
 export default function LogPage() {
     const [component, setComponent] = useState(true)
     return (
@@ -15,7 +13,7 @@ export default function LogPage() {
             <div className="content">
                 <div className="banner">
                     <h1>
-                        <img src={baseUrl + "/perfil.jpg"} alt="" />
+                        <img src={"public/perfil.jpg"} alt="" />
                         João Filipe
                         <span>{"<"} Desenvolvedor Front-end {"/>"}</span>
                     </h1>
@@ -165,6 +163,4 @@ export default function LogPage() {
             </div>
         </div>
     )
-
-
 }

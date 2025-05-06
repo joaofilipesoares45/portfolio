@@ -49,7 +49,7 @@ export default function Home() {
                     </div>
 
                     <h1>
-                        <img src={baseUrl + "/perfil.jpg"} alt="" />
+                        <img src={"public/perfil.jpg"} alt="" />
                         João Filipe
                         <span>{"<"} Desenvolvedor Front-end {"/>"}</span>
                     </h1>

@@ -1,4 +1,4 @@
-import { baseUrl, openModal } from "../../../utils/functions";
+import { openModal } from "../../../utils/functions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleDown } from "@fortawesome/free-solid-svg-icons"
 
@@ -6,7 +6,7 @@ export default function Sobre() {
     return (
         <section className="sect sobre" id="sobre">
             <div className="info">
-                <img src={baseUrl + "/about2.jpg"} alt="" />
+                <img src={"public/about2.jpg"} alt="" />
 
                 <div className="declare">
                     <h2>Sobre</h2>
