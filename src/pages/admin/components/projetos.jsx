@@ -7,14 +7,11 @@ import { doc, deleteDoc } from "firebase/firestore";
 import { firestore } from "../../../../firebase/app_firebase";
 
 export default function Projetos() {
-
     const { projetos } = useContext(DataContext)
-
     const deleteProject = (id) => {
         const projectDoc = doc(firestore, "projetos", id)
         deleteDoc(projectDoc)
     }
-
     return (
         <section className="sect projetos" id="projetos">
 
