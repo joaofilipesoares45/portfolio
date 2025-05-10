@@ -4,9 +4,12 @@ import { faGithub, faLinkedin, faWhatsapp, faInstagram } from "@fortawesome/free
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../../../firebase/app_firebase";
 import { useNavigate } from "react-router"
+import { useContext } from "react";
+import { DataContext } from "../../../context/DataContext";
 
 export default function CreateAcount({ setComponent }) {
     const navigate = useNavigate()
+    const {setUsuarioAtual} = useContext(DataContext)
 
     const usersRef = collection(firestore, "usuarios")
     const submit = async (event) => {
@@ -24,6 +27,7 @@ export default function CreateAcount({ setComponent }) {
 
         localStorage.setItem("portfolio:user", JSON.stringify(res2.id))
         navigate("/")
+        setUsuarioAtual()
     }
 
     return (

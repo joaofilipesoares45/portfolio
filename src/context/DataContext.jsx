@@ -22,7 +22,7 @@ export function DataProvider({ children }) {
         if (localStorage.getItem("portfolio:user") !== null) {
             setUsuarioAtual(JSON.parse(localStorage.getItem("portfolio:user")))
         }
-    }, [])
+    }, [usuarioAtual])
 
     const value = {
         projetos,

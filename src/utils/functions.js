@@ -108,7 +108,7 @@ export const sortListHour = (list) => {
 }
 
 export const logOut = () => {
-    localStorage.removeItem("eshop:user")
+    localStorage.removeItem("portfolio:user")
 }
 
 export const baseUrl = '/portfolio/#'

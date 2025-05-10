@@ -157,6 +157,89 @@
                 svg {
                     transition: initial;
                 }
+
+                &.log-btn {
+                    --color: black;
+                    --back: white;
+
+                    .login-drop-down {
+                        display: flex;
+                        flex-direction: column;
+                        cursor: initial;
+
+                        position: absolute;
+                        top: calc(100% + 5px);
+                        right: 5px;
+
+                        width: 100%;
+                        max-width: 300px;
+                        border-radius: 3px;
+                        padding: 20px;
+                        
+
+                        background-color: rgb(255, 255, 255);
+                        color: black;
+                        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.53);
+
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: .2s;
+
+                        &[visible] {
+                            opacity: 1;
+                            pointer-events: all;
+                            animation: var(--show-top);
+                        }
+
+                        .info {
+                            margin-bottom: 10px;
+                            .fa-user {
+                                font-size: 3rem;
+                                margin-bottom: 10px;
+                            }
+
+                            h3 {
+                                font-size: .9rem;
+                                text-wrap: nowrap;
+                            }
+
+                            p {
+                                font-size: .8rem;
+                            }
+                        }
+
+                        span {
+                            cursor: pointer;
+                            font-size: .8rem;
+
+                            &:hover {
+                                color: rgb(49, 42, 96);
+                                text-decoration: underline;
+                            }
+                        }
+
+                        a {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 10px;
+                            border-radius: 3px;
+                            color: white;
+                            background-color: red;
+                            align-self: center;
+                            min-width: 70%;
+                            transition: .2s;
+                            font-size: .7rem;
+                            margin-top: 10px;
+
+                            &:hover {
+                                color: red;
+                                background-color: rgb(240, 240, 240);
+                            }
+                        }
+
+                    }
+                }
             }
 
             svg {
@@ -167,7 +250,6 @@
                     border-radius: 50%;
                     transition: padding 0s;
                 }
-
 
                 &.fa-moon {
                     padding: 10px 12px;
@@ -613,6 +695,79 @@
                 }
             }
         }
+
+        .ex-slide {
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+            gap: 20px;
+            position: relative;
+            min-height: 250px;
+
+            .item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 160px;
+                min-width: 300px;
+                background-color: rgb(192, 192, 192);
+                border-radius: 3px;
+                position: absolute;
+                opacity: .5;
+                z-index: 0;
+                scale: .8;
+                transition: .2s;
+                pointer-events: none;
+
+                &[view=true] {
+                    opacity: 1;
+                    z-index: 1;
+                    scale: 1;
+                    pointer-events: all;
+                    position: initial;
+
+                    &[position=l] {
+                        animation: var(--show-left);
+                    }
+
+                    &[position=r] {
+                        animation: var(--show-right);
+                    }
+                }
+
+                &[prev="true"] {
+                    left: -50px;
+                }
+
+                &[prev="false"] {
+                    right: -50px;
+                }
+            }
+
+            &+nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                padding: 10px;
+
+                button {
+                    padding: 7px;
+                    border-radius: 50%;
+                    background-color: black;
+                    --back: red;
+                    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.311);
+                    transition: .2s;
+                    border: solid 2px transparent;
+
+                    &[selected] {
+                        background-color: red;
+                        border-color: black;
+                        scale: 1.05;
+                    }
+                }
+            }
+        }
     }
 
     .bottom-page {
@@ -763,7 +918,7 @@
                 justify-content: space-evenly;
                 margin-top: 20px;
                 width: 100%;
-                
+
 
                 button {
                     background-color: blue;
@@ -774,7 +929,7 @@
                     &:first-child {
                         background-color: red;
                         --color: red;
-                        
+
                     }
 
                     a {
@@ -893,6 +1048,7 @@
         align-items: center;
         justify-content: center;
         background-color: rgba(0, 0, 0, 0.379);
+
         &[open] .content {
             animation: var(--show-top);
         }
@@ -902,7 +1058,7 @@
             max-width: 500px;
             font-family: "Inter", sans-serif;
             background-color: rgb(65, 65, 201);
-            
+
             color: white;
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.672);
             padding: 10px;
@@ -946,18 +1102,18 @@
                 justify-content: space-evenly;
                 margin-top: 20px;
                 width: 100%;
-                
+
 
                 button {
                     background-color: blue;
                     color: white;
                     --color: blue;
                     --back: white;
-                    
+
                     &:first-child {
                         background-color: red;
                         --color: red;
-                        
+
                     }
 
                     a {

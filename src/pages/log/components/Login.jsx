@@ -1,12 +1,15 @@
-import { formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
+import { faGithub, faInstagram, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin, faWhatsapp, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { collection, getDocs } from "firebase/firestore";
+import { useNavigate } from "react-router";
 import { firestore } from "../../../../firebase/app_firebase";
-import { useNavigate } from "react-router"
+import { formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
+import { useContext } from "react";
+import { DataContext } from "../../../context/DataContext";
 
 export default function Login({ setComponent }) {
     const navigate = useNavigate()
+    const {setUsuarioAtual} = useContext(DataContext)
 
     const submit = async (event) => {
         event.preventDefault()
@@ -23,6 +26,7 @@ export default function Login({ setComponent }) {
         if (user) {
             localStorage.setItem("portfolio:user", JSON.stringify(user.id))
             navigate("/")
+            setUsuarioAtual()
         }
     }
 
