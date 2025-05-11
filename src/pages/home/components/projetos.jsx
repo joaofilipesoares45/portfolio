@@ -3,13 +3,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faArrowRight, faEllipsis, faLink } from "@fortawesome/free-solid-svg-icons"
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons"
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../../context/DataContext";
-
+import NotificationBtn from "../../../Classes/NotificationBtn";
+import { firestore } from "../../../../firebase/app_firebase";
+import { doc, getDoc } from "firebase/firestore";
 
 export default function Projetos() {
 
-    const { projetos } = useContext(DataContext)
+    const { projetos, newNotification, usuarioAtual } = useContext(DataContext)
+
+    const [user, setUser] = useState({})
+    useEffect(() => {
+        const getUser = async () => {
+            const userDoc = doc(firestore, "usuarios", usuarioAtual)
+            const data = (await getDoc(userDoc)).data()
+            setUser(data)
+        }
+        getUser()
+    }, [usuarioAtual])
+
     return (
         <section className="sect projetos" id="projetos">
             <div className="head">
@@ -45,8 +58,7 @@ export default function Projetos() {
                                     onClick={() => {
                                         whatsMsg("86988667039", "Estou interessado no projeto: " + nome)
                                     }} />
-
-                                <FontAwesomeIcon icon={faEllipsis}/>
+                                <FontAwesomeIcon icon={faEllipsis} />
                             </nav>
                         </div>
                     )
@@ -59,13 +71,11 @@ export default function Projetos() {
                     e.preventDefault()
                     const text = formCaptureData(e.target).msgtext
                     if (text) {
-                        whatsMsg("86988667039", text)
+                        whatsMsg("86988667039", user.nome ? `Olá me chamo ${user.nome}: \n ` + text : text)
                     } else {
-                        alert("Digite algo na caixa de texto")
+                        newNotification(3, "Erro", "O campo de texto está vazio!", [new NotificationBtn({ text: "Ok, vou preencher", tag: "button", fun: "close", color: "blue" })])
                     }
-
                 }}>
-
                     <textarea name="msgtext" placeholder="Digite aqui sua mensagem!"></textarea>
                     <button type="submit"><FontAwesomeIcon icon={faArrowRight} /></button>
                 </form>

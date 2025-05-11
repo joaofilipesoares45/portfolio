@@ -23,9 +23,9 @@ export default function Home() {
     const { usuarioAtual } = useContext(DataContext)
     const [colorMode, setColorMode] = useState(true)
 
-    const [user, setUser] = useState({})
     const navigate = useNavigate()
-
+    
+    const [user, setUser] = useState({})
     useEffect(() => {
         const getUser = async () => {
             const userDoc = doc(firestore, "usuarios", usuarioAtual)
@@ -88,7 +88,7 @@ export default function Home() {
                     </div>
 
                     <h1>
-                        <img src={"/portfolio/perfil.jpg"} alt="" />
+                        <img src={"/portfolio/logo_1.jpg"} alt="" />
                         João Filipe
                         <span>{"<"} Desenvolvedor Front-end {"/>"}</span>
                     </h1>

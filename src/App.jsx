@@ -1,10 +1,12 @@
 import { DataProvider } from "./context/DataContext"
+import Notification from "./pages/components/Notification"
 import RouterApp from "./Routes"
 
 function App() {
   return (
     <DataProvider>
       <RouterApp/>
+      <Notification/>
     </DataProvider>
   )
 }

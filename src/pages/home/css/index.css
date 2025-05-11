@@ -175,7 +175,7 @@
                         max-width: 300px;
                         border-radius: 3px;
                         padding: 20px;
-                        
+
 
                         background-color: rgb(255, 255, 255);
                         color: black;
@@ -193,6 +193,7 @@
 
                         .info {
                             margin-bottom: 10px;
+
                             .fa-user {
                                 font-size: 3rem;
                                 margin-bottom: 10px;
@@ -532,6 +533,8 @@
                         .img {
                             position: relative;
                             margin-bottom: 10px;
+                            overflow: hidden;
+                            border-radius: 5px;
 
                             &[load]::after {
                                 opacity: 0;
@@ -555,7 +558,7 @@
 
                             img {
                                 max-width: 100%;
-                                border-radius: 5px;
+
                             }
                         }
 
