@@ -11,11 +11,17 @@ const getData = async (ref, set) => {
 }
 
 export function DataProvider({ children }) {
-
     const [projeto, setProjeto] = useState()
     const [projetos, setProjetos] = useState([])
     const [usuarioAtual, setUsuarioAtual] = useState()
     const [notification, setNotification] = useState()
+    const [colorMode, setColorMode] = useState(true)
+
+    useEffect(() => {
+        if (localStorage.getItem("portfolio:colormode") !== null) {
+            setColorMode(JSON.parse(localStorage.getItem("portfolio:colormode")))
+        }
+    }, [])
 
     useEffect(() => {
         getData(collection(firestore, 'projetos'), setProjetos)
@@ -33,6 +39,8 @@ export function DataProvider({ children }) {
     }
 
     const value = {
+        colorMode, 
+        setColorMode,
         projetos,
         setProjetos,
         usuarioAtual, 

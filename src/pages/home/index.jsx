@@ -15,13 +15,11 @@ import { firestore } from "../../../firebase/app_firebase";
 import Slide from "./components/Slide";
 import { useNavigate } from "react-router"
 
-
 const list = [
     1, 2, 3, 4, 5
 ]
 export default function Home() {
-    const { usuarioAtual } = useContext(DataContext)
-    const [colorMode, setColorMode] = useState(true)
+    const { usuarioAtual, colorMode, setColorMode } = useContext(DataContext)
 
     const navigate = useNavigate()
     
@@ -43,6 +41,16 @@ export default function Home() {
         if (target.tagName === "A" || target.tagName === "svg") {
             const element = document.querySelector(target.getAttribute("href"))
             document.querySelector(".page.home").scrollTo(0, (element.offsetTop - 65))
+        }
+    }
+
+    const changeColorMode = () => {
+        if (colorMode === true) {
+            setColorMode(false)
+            localStorage.setItem("portfolio:colormode", JSON.stringify(false))
+        }else {
+            setColorMode(true)
+            localStorage.setItem("portfolio:colormode", JSON.stringify(true))
         }
     }
 
@@ -77,7 +85,7 @@ export default function Home() {
                         </div>}
                     </button>
                     <button onClick={() => openModal("download-cv")}>Baixar CV <FontAwesomeIcon icon={faArrowAltCircleDown} /></button>
-                    <FontAwesomeIcon icon={colorMode === true ? faSun : faMoon} onClick={() => colorMode === true ? setColorMode(false) : setColorMode(true)} />
+                    <FontAwesomeIcon icon={colorMode === true ? faSun : faMoon} onClick={changeColorMode} />
                 </div>
             </header>
 
