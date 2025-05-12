@@ -95,7 +95,7 @@
                     span {
                         font-size: .7rem;
 
-                        &[selected] {
+                        &[selected="true"] {
                             text-decoration: underline;
                         }
                     }

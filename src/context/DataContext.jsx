@@ -12,6 +12,7 @@ const getData = async (ref, set) => {
 
 export function DataProvider({ children }) {
 
+    const [projeto, setProjeto] = useState()
     const [projetos, setProjetos] = useState([])
     const [usuarioAtual, setUsuarioAtual] = useState()
     const [notification, setNotification] = useState()
@@ -38,7 +39,9 @@ export function DataProvider({ children }) {
         setUsuarioAtual,
         notification, 
         setNotification,
-        newNotification
+        newNotification,
+        projeto, 
+        setProjeto
     }
 
     return (

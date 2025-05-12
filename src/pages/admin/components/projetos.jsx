@@ -1,13 +1,13 @@
-import { openLink } from "../../../utils/functions";
+import { openLink, openModal } from "../../../utils/functions";
 import { useContext } from "react";
 import { DataContext } from "../../../context/DataContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink, faTrash } from "@fortawesome/free-solid-svg-icons"
+import { faLink, faPencil, faTrash } from "@fortawesome/free-solid-svg-icons"
 import { doc, deleteDoc } from "firebase/firestore";
 import { firestore } from "../../../../firebase/app_firebase";
 
 export default function Projetos() {
-    const { projetos } = useContext(DataContext)
+    const { projetos, setProjeto } = useContext(DataContext)
     const deleteProject = (id) => {
         const projectDoc = doc(firestore, "projetos", id)
         deleteDoc(projectDoc)
@@ -36,6 +36,7 @@ export default function Projetos() {
                             </div>
 
                             <nav>
+                                <FontAwesomeIcon icon={faPencil} onClick={() => {setProjeto(item), openModal("new-project")}} />
                                 <FontAwesomeIcon icon={faTrash} onClick={() => deleteProject(id)} />
                                 <FontAwesomeIcon icon={faLink} onClick={() => openLink({ target: link })} />
                             </nav>

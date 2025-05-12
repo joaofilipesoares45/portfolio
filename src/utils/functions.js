@@ -111,4 +111,6 @@ export const logOut = () => {
     localStorage.removeItem("portfolio:user")
 }
 
+export const listTags = [{name: "html", tag: "html"},{name: "css", tag: "css"},{name: "js", tag: "javaScript"},{name: "react", tag: "react"},{name: "vue", tag: "vueJs"},{name: "git", tag: "git"},{name: "github", tag: "gitHub"}]
+
 export const baseUrl = '/portfolio/#'
