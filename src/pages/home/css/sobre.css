@@ -1,0 +1,408 @@
+.page.home {
+    main {
+        .sect {
+            &.sobre {
+                .info {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 50px;
+                    height: 100%;
+
+                    .img {
+                        display: flex;
+                    }
+
+                    img {
+                        align-self: center;
+                        width: 100%;
+                        max-width: 700px;
+                        border-radius: 5px;
+                    }
+
+                    .declare {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        max-width: 700px;
+
+                        h2 {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            text-align: start;
+                            text-wrap: nowrap;
+                            flex-wrap: wrap;
+                            
+                            font-size: 1.8rem;
+                            margin-bottom: 20px;
+
+                            p {
+                                color: rgb(40, 49, 180);
+                                text-shadow: 0 0 .001px black;
+                            }
+                        }
+
+                        h3 + p {
+                            align-self: flex-start;
+                        }
+
+                        .top {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            h3 {
+                                font-weight: 500;
+                            }
+
+                            .contact {
+                                display: flex;
+                                flex-direction: column;
+                                margin-top: 10px;
+                                padding: 20px;
+                                border-radius: 5px;
+                                gap: 10px;
+                                width: 100%;
+                                background-color: rgba(255, 255, 255, 0.157);
+
+                                div {
+                                    display: grid;
+                                    grid-template-columns: repeat(2, 1fr);
+                                    gap: 10px;
+
+                                    h4 {
+                                        display: flex;
+                                        flex-direction: column;
+                                        font-size: 1rem;
+                                        font-weight: 400;
+
+                                        span {
+                                            font-size: .9rem;
+                                            user-select: text !important;
+                                        }
+                                    }
+                                }
+
+                                p {
+                                    align-self: center;
+                                    margin-bottom: 0px;
+                                }
+
+                                nav {
+                                    display: flex;
+                                    gap: 10px;
+                                    justify-content: center;
+
+                                    button {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 5px;
+                                        padding: 10px;
+                                        font-family: "Cascadia Mono", sans-serif;
+                                        background-color: rgb(92, 92, 255);
+                                        --color: white;
+                                        --back: rgb(11, 7, 44);
+
+                                        svg {
+                                            transition: initial;
+                                        }
+                                    }
+                                }
+                            }
+
+                            p {
+                                font-size: 1rem;
+                                margin-block: 10px;
+                            }
+
+                            .llll {
+                                display: flex;
+                                justify-content: center;
+                                width: 100%;
+                                gap: 10px;
+                                padding: 10px;
+                                padding-bottom: 30px;
+                                margin-bottom: 20px;
+                                position: relative;
+                                border-bottom: solid 2px white;
+
+                                &::after {
+                                    content: "";
+                                    background-color: rgb(255, 255, 255);
+                                    padding: 8px;
+                                    position: absolute;
+                                    border-radius: 50%;
+                                    bottom: -9px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 980px) {
+    .page.home {
+        main {
+            .sect {
+                &.sobre {
+                    padding-block: 10px;
+
+                    .info {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 10px;
+                        height: 100%;
+            
+                        img {
+                            width: 100%;
+                            max-width: 500px;
+                            border-radius: 5px;
+                            z-index: 0;
+                        }
+
+                        .declare {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            position: relative;
+                            z-index: 0;
+                            max-width: calc(100% - 20px);
+
+                            h2 {
+                                align-self: center;
+                                font-size: 1.8rem;
+                                margin-bottom: 20px;
+                            }
+
+                            .top {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+
+                                h3 {
+                                    font-size: 1rem;
+                                }
+
+                                .contact {
+                                    display: flex;
+                                    flex-direction: column;
+                                    margin-top: 10px;
+                                    padding: 10px;
+                                    border-radius: 5px;
+                                    gap: 10px;
+                                    width: 100%;
+
+                                    div {
+                                        display: grid;
+                                        grid-template-columns: repeat(2, 1fr);
+                                        gap: 10px;
+
+                                        h4 {
+                                            display: flex;
+                                            flex-direction: column;
+
+                                            span {
+                                                user-select: text !important;
+                                            }
+                                        }
+                                    }
+
+                                    nav {
+                                        display: flex;
+                                        gap: 10px;
+                                        justify-content: center;
+
+                                        button {
+                                            gap: 5px;
+                                            padding: 7px;
+                                            font-size: .7rem !important;
+                                        }
+                                    }
+                                }
+
+
+                                p {
+                                    font-size: .8rem;
+                                    margin-bottom: 10px;
+                                    text-wrap: wrap;
+
+                                    &.pppp {
+                                        margin-top: 0px;
+                                    }
+                                }
+
+                                .llll {
+                                    display: flex;
+                                    justify-content: center;
+                                    width: 100%;
+                                    gap: 10px;
+                                    padding: 10px;
+                                    padding-bottom: 30px;
+                                    margin-bottom: 10px;
+                                    position: relative;
+                                    border-bottom: solid 2px white;
+
+                                    &::after {
+                                        content: "";
+                                        background-color: rgb(255, 255, 255);
+                                        padding: 8px;
+                                        position: absolute;
+                                        border-radius: 50%;
+                                        bottom: -9px;
+                                    }
+                                }
+
+                                button {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 5px;
+                                    padding: 10px;
+                                    font-family: "Cascadia Mono", sans-serif;
+                                    background-color: rgb(92, 92, 255);
+                                    --color: white;
+                                    --back: rgb(11, 7, 44);
+
+                                    svg {
+                                        transition: initial;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 510px) {
+    .page.home {
+        main {
+            .sect {
+                &.sobre {
+                    padding-block: 10px;
+
+                    .info {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        height: 100%;
+
+
+                        .declare {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            max-width: max-content;
+
+                            h2 {
+                                align-self: center;
+                                font-size: 1.3rem;
+                                margin-bottom: 20px;
+                            }
+
+                            .top {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+
+                                .contact {
+                                    display: flex;
+                                    flex-direction: column;
+                                    margin-top: 10px;
+                                    padding: 10px;
+                                    border-radius: 5px;
+                                    gap: 10px;
+                                    width: 100%;
+                                    background-color: rgba(255, 255, 255, 0.157);
+
+                                    div {
+                                        display: grid;
+                                        grid-template-columns: repeat(2, 1fr);
+                                        gap: 10px;
+
+                                        h4 {
+                                            display: flex;
+                                            flex-direction: column;
+                                            font-size: .9rem;
+                                            font-weight: 400;
+
+                                            span {
+                                                font-size: .8rem;
+                                                user-select: text !important;
+                                            }
+                                        }
+                                    }
+
+                                    nav {
+                                        display: flex;
+                                        gap: 10px;
+                                        
+                                        button {
+                                            gap: 5px;
+                                            padding: 7px;
+                                            font-size: .7rem !important;
+                                        }
+                                    }
+                                }
+
+                                p {
+                                    font-size: .8rem;
+                                    margin-bottom: 10px;
+                                    text-wrap: wrap;
+
+                                    &.pppp {
+                                        margin-top: 0px;
+                                    }
+                                }
+
+                                .llll {
+                                    display: flex;
+                                    justify-content: center;
+                                    width: 100%;
+                                    gap: 5px;
+                                    padding: 10px;
+                                    padding-bottom: 20px;
+                                    position: relative;
+                                    border-bottom: solid 2px white;
+
+                                    span {
+                                        font-size: .6rem;
+                                    }
+
+                                    &::after {
+                                        content: "";
+                                        background-color: rgb(255, 255, 255);
+                                        padding: 8px;
+                                        position: absolute;
+                                        border-radius: 50%;
+                                        bottom: -9px;
+                                    }
+                                }
+
+                                button {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 5px;
+                                    padding: 10px;
+                                    font-family: "Cascadia Mono", sans-serif;
+                                    background-color: rgb(92, 92, 255);
+                                    --color: white;
+                                    --back: rgb(11, 7, 44);
+
+                                    svg {
+                                        transition: initial;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -8,6 +8,7 @@ import { DataContext } from "../../../context/DataContext";
 import NotificationBtn from "../../../Classes/NotificationBtn";
 import { firestore } from "../../../../firebase/app_firebase";
 import { doc, getDoc } from "firebase/firestore";
+import "../css/projetos.css"
 
 export default function Projetos() {
 
@@ -79,7 +80,6 @@ export default function Projetos() {
                     <textarea name="msgtext" placeholder="Digite aqui sua mensagem!"></textarea>
                     <button type="submit"><FontAwesomeIcon icon={faArrowRight} /></button>
                 </form>
-
             </nav>
         </section>
     )

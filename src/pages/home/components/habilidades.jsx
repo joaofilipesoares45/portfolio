@@ -1,3 +1,5 @@
+import "../css/habilidades.css"
+
 export default function Habilidades() {
     return (
         <section className="sect habilidades" id="habilidades">
@@ -14,7 +16,6 @@ export default function Habilidades() {
                 <span className="tec git">Git</span>
                 <span className="tec github">GitHub</span>
             </div>
-            
         </section>
     )
 }

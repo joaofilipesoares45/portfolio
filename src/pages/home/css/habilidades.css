@@ -1,0 +1,94 @@
+.page.home {
+    main {
+        .sect {
+            &.habilidades {
+                .head {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    h2 {
+                        font-size: 1.8rem;
+                        margin-bottom: 15px;
+                    }
+                }
+
+                .list {
+                    margin-top: 20px;
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+
+                    span {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 980px) {
+    .page.home {
+        main {
+            .sect {
+                &.habilidades {
+                    .head {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        h2 {
+                            font-size: 1.8rem;
+                            margin-bottom: 15px;
+                        }
+                    }
+
+                    .list {
+                        margin-top: 20px;
+                        display: flex;
+                        justify-content: center;
+                        gap: 10px;
+
+                        span {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 510px) {
+    .page.home {
+        main {
+            .sect {
+                &.habilidades {
+                    .head {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        h2 {
+                            font-size: 1.8rem;
+                            margin-bottom: 15px;
+                        }
+                    }
+
+                    .list {
+                        margin-top: 20px;
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        gap: 10px;
+
+                        span {
+                            font-size: .7rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,19 +1,22 @@
 import { faCss, faGithub, faHtml5, faInstagram, faJs, faLinkedin, faReact, faVuejs, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faArrowAltCircleDown, faArrowDown, faArrowRightFromBracket, faBars, faCode, faMoon, faSun, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { doc, getDoc } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import { firestore } from "../../../firebase/app_firebase";
 import { DataContext } from "../../context/DataContext";
 import { baseUrl, logOut, openLink, openModal, whatsMsg } from "../../utils/functions";
+
 import DownloadCV from "./components/DownloadCV";
 import Habilidades from "./components/habilidades";
 import Projetos from "./components/projetos";
 import Sidebar from "./components/sidebar";
+import Slide from "./components/Slide";
 import Sobre from "./components/sobre";
 import "./css/index.css";
-import { doc, getDoc } from "firebase/firestore";
-import { firestore } from "../../../firebase/app_firebase";
-import Slide from "./components/Slide";
-import { useNavigate } from "react-router"
+import "./css/dark-mode.css";
 
 const list = [
     1, 2, 3, 4, 5
@@ -22,7 +25,7 @@ export default function Home() {
     const { usuarioAtual, colorMode, setColorMode } = useContext(DataContext)
 
     const navigate = useNavigate()
-    
+
     const [user, setUser] = useState({})
     useEffect(() => {
         const getUser = async () => {
@@ -48,7 +51,7 @@ export default function Home() {
         if (colorMode === true) {
             setColorMode(false)
             localStorage.setItem("portfolio:colormode", JSON.stringify(false))
-        }else {
+        } else {
             setColorMode(true)
             localStorage.setItem("portfolio:colormode", JSON.stringify(true))
         }
@@ -241,6 +244,7 @@ export default function Home() {
                 </div>
 
                 <Sobre />
+
                 <Projetos />
                 <Habilidades />
                 <Slide children={
