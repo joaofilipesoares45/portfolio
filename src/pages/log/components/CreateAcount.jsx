@@ -1,4 +1,4 @@
-import { formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
+import { closeModal, formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faWhatsapp, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { addDoc, collection, getDocs } from "firebase/firestore";
@@ -6,10 +6,11 @@ import { firestore } from "../../../../firebase/app_firebase";
 import { useNavigate } from "react-router"
 import { useContext } from "react";
 import { DataContext } from "../../../context/DataContext";
+import NotificationBtn from "../../../Classes/NotificationBtn";
 
 export default function CreateAcount({ setComponent }) {
     const navigate = useNavigate()
-    const {setUsuarioAtual} = useContext(DataContext)
+    const { setUsuarioAtual, newNotification } = useContext(DataContext)
 
     const usersRef = collection(firestore, "usuarios")
     const submit = async (event) => {
@@ -25,9 +26,14 @@ export default function CreateAcount({ setComponent }) {
 
         const res2 = await addDoc(usersRef, data)
 
-        localStorage.setItem("portfolio:user", JSON.stringify(res2.id))
-        navigate("/")
-        setUsuarioAtual()
+        newNotification(3, "Login", "Sua conta foi criada com sucesso", [new NotificationBtn({
+            text: "Prosseguir", tag: "button", fun: () => {
+                localStorage.setItem("portfolio:user", JSON.stringify(res2.id))
+                navigate("/")
+                setUsuarioAtual()
+                closeModal()
+            }, color: "blue"
+        })])
     }
 
     return (
@@ -52,21 +58,27 @@ export default function CreateAcount({ setComponent }) {
                     </button>
                 </h2>
             </div>
-            <form onSubmit={submit}>
+            <form onSubmit={submit} onBlur={({ target }) => {
+                if (target.value.length > 0) {
+                    target.parentElement.querySelector("label").setAttribute("ass", "")
+                } else if (target.parentElement.querySelector("label").hasAttribute("ass")) {
+                    target.parentElement.querySelector("label").removeAttribute("ass")
+                }
+            }}>
 
                 <h3>Nova conta</h3>
                 <div className="inputs">
                     <div>
-                        <label htmlFor="nome">Nome</label>
                         <input type="text" id="nome" name="nome" />
+                        <label htmlFor="nome">Nome</label>
                     </div>
                     <div>
-                        <label htmlFor="email">Email</label>
                         <input type="text" id="email" name="email" />
+                        <label htmlFor="email">Email</label>
                     </div>
                     <div>
-                        <label htmlFor="senha">Senha</label>
                         <input type="text" id="senha" name="senha" />
+                        <label htmlFor="senha">Senha</label>
                     </div>
                 </div>
                 <nav>

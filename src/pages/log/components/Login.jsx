@@ -3,13 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { collection, getDocs } from "firebase/firestore";
 import { useNavigate } from "react-router";
 import { firestore } from "../../../../firebase/app_firebase";
-import { formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
+import { closeModal, formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
 import { useContext } from "react";
 import { DataContext } from "../../../context/DataContext";
+import NotificationBtn from "../../../Classes/NotificationBtn";
 
 export default function Login({ setComponent }) {
     const navigate = useNavigate()
-    const {setUsuarioAtual} = useContext(DataContext)
+    const { setUsuarioAtual, newNotification } = useContext(DataContext)
 
     const submit = async (event) => {
         event.preventDefault()
@@ -24,9 +25,14 @@ export default function Login({ setComponent }) {
             return
         }
         if (user) {
-            localStorage.setItem("portfolio:user", JSON.stringify(user.id))
-            navigate("/")
-            setUsuarioAtual()
+            newNotification(3, "Login", "Sua conta foi criada com sucesso", [new NotificationBtn({
+                text: "Prosseguir", tag: "button", fun: () => {
+                    localStorage.setItem("portfolio:user", JSON.stringify(user.id))
+                    navigate("/")
+                    setUsuarioAtual()
+                    closeModal()
+                }, color: "blue"
+            })])
         }
     }
 
@@ -52,17 +58,23 @@ export default function Login({ setComponent }) {
                     </button>
                 </h2>
             </div>
-            <form onSubmit={submit}>
+            <form onSubmit={submit} onBlur={({ target }) => {
+                if (target.value.length > 0) {
+                    target.parentElement.querySelector("label").setAttribute("ass", "")
+                } else if (target.parentElement.querySelector("label").hasAttribute("ass")) {
+                    target.parentElement.querySelector("label").removeAttribute("ass")
+                }
+            }}>
 
                 <h3>Fazer login</h3>
                 <div className="inputs">
                     <div>
-                        <label htmlFor="email">Email</label>
                         <input type="text" id="email" name="email" />
+                        <label htmlFor="email">Email</label>
                     </div>
                     <div>
-                        <label htmlFor="senha">Senha</label>
                         <input type="text" id="senha" name="senha" />
+                        <label htmlFor="senha">Senha</label>
                     </div>
                 </div>
                 <nav>

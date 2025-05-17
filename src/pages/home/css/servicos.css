@@ -39,15 +39,15 @@
                         transition: .2s;
 
                         &:nth-child(1) {
-                            background-color: rgba(221, 30, 30);
+                            background-color: rgba(221, 30, 30, 0.748);
                         }
 
                         &:nth-child(2) {
-                            background-color: rgba(14, 167, 0);
+                            background-color: rgba(14, 167, 0, 0.748);
                         }
 
                         &:nth-child(3) {
-                            background-color: rgb(242, 190, 21);
+                            background-color: rgb(242, 190, 21, 0.748);
                         }
 
                         h3 {
