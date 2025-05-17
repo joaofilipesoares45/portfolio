@@ -10,7 +10,7 @@
 
                     h2 {
                         font-size: 1.8rem;
-                        margin-bottom: 15px;
+                        margin-bottom: 10px;
                     }
 
                     p {
@@ -208,13 +208,9 @@
             .sect {
                 &.projetos {
                     .head {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        margin-bottom: 20px;
 
                         h2 {
-                            margin-bottom: 15px;
+                            margin-bottom: 10px;
                         }
 
                         p {
@@ -342,13 +338,9 @@
             .sect {
                 &.projetos {
                     .head {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        margin-bottom: 20px;
 
                         h2 {
-                            margin-bottom: 15px;
+                            margin-bottom: 10px;
                         }
 
                         p {

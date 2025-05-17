@@ -17,6 +17,7 @@ import Slide from "./components/Slide";
 import Sobre from "./components/sobre";
 import "./css/index.css";
 import "./css/dark-mode.css";
+import Servicos from "./components/servicos";
 
 const list = [
     1, 2, 3, 4, 5
@@ -62,10 +63,10 @@ export default function Home() {
             <header>
                 <FontAwesomeIcon icon={faBars} onClick={() => openModal("sidebar")} />
                 <nav onClick={goTo}>
-                    <a href="#sobre">Sobre mim</a>
+                    <a href="#sobre">Sobre mim</a> 
+                    <a href="#servicos">Serviços</a>
                     <a href="#projetos">Projetos</a>
                     <a href="#habilidades">Tecnologias</a>
-                    <a href="#projetos">Meus Serviços</a>
                 </nav>
 
                 <div className="options">
@@ -244,7 +245,7 @@ export default function Home() {
                 </div>
 
                 <Sobre />
-
+                <Servicos />
                 <Projetos />
                 <Habilidades />
                 <Slide children={

@@ -1,6 +1,5 @@
 import { formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { faArrowRight, faEllipsis, faLink } from "@fortawesome/free-solid-svg-icons"
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons"
 import { useContext, useEffect, useState } from "react";

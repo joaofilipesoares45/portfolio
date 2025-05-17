@@ -130,12 +130,12 @@
                 font-size: .8rem;
                 font-weight: 600;
                 color: white;
-                background-color: rgba(220, 220, 220, 0.119);
+                /* background-color: rgba(220, 220, 220, 0.119); */
                 padding: 10px;
                 transition: .2s;
 
                 &:hover {
-                    scale: 1.03;
+                    scale: 1.02;
                 }
             }
         }
@@ -526,21 +526,28 @@
         background-color: rgba(0, 0, 0, 0.316);
 
         &[open] .content {
-            width: 100%;
+            animation: var(--show-right);
         }
 
         .content {
-            background-color: rgb(72, 101, 175);
+            display: flex;
+            flex-direction: column;
+
+            background-color: rgb(59, 87, 157);
             color: white;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.566);
-            height: 100%;
-            width: 0%;
+            height: min-content;
+
+            width: 100%;
             max-width: 300px;
+            height: 100%;
             padding: 10px;
+            padding-bottom: 20px;
             transition: width .3s;
 
             h2 {
-                margin-bottom: 15px;
+                align-self: center;
+                padding: 10px;
             }
 
             nav {
@@ -552,7 +559,7 @@
                     font-size: .8rem;
                     font-weight: 600;
                     color: white;
-                    background-color: rgba(26, 12, 130, 0.609);
+                    border-bottom: solid 3px white;
                     padding: 10px;
                     border-radius: 3px;
                     transition: .2s;

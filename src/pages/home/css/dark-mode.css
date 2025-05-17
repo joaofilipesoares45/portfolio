@@ -146,23 +146,11 @@
         font-family: "Cascadia Mono", sans-serif;
         background-color: rgba(0, 0, 0, 0.316);
 
-        &[open] .content {
-            width: 100%;
-        }
-
         .content {
             background-color: rgb(13, 48, 136);
             color: white;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.566);
-            height: 100%;
-            width: 0%;
-            max-width: 300px;
-            padding: 10px;
             transition: width .3s;
-
-            h2 {
-                margin-bottom: 15px;
-            }
 
             nav {
                 display: flex;
@@ -172,7 +160,6 @@
                     font-size: .8rem;
                     font-weight: 600;
                     color: white;
-                    background-color: rgba(0, 0, 0, 0.609);
                     padding: 10px;
                     transition: .2s;
                 }

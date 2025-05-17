@@ -21,9 +21,9 @@ export default function Sidebar() {
                 <h2>Menu</h2>
                 <nav onClick={goTo}>
                     <a href="#sobre">Sobre mim</a>
+                    <a href="#servicos">Serviços</a>
                     <a href="#projetos">Projetos</a>
                     <a href="#habilidades">Tecnologias</a>
-                    <a href="#projetos">Meus Serviços</a>
                 </nav>
             </div>
         </div>

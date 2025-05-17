@@ -1,0 +1,77 @@
+.page.home {
+    main {
+        .sect {
+            &.servicos {
+                .head {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 20px;
+
+                    h2 {
+                        font-size: 1.8rem;
+                        margin-bottom: 10px;
+                    }
+
+                    p {
+                        font-size: .9rem;
+                    }
+                }
+
+                .list {
+                    display: flex;
+                    justify-content: space-evenly;
+                    flex-wrap: wrap;
+                    gap: 10px;
+
+                    .item {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        max-width: 350px;
+                        padding: 50px 10px;
+                        color: white;
+                        border-radius: 5px;
+                        text-shadow: 0 0 5px rgba(0, 0, 0, 0.434);
+                        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.33);
+                        transition: .2s;
+
+                        &:nth-child(1) {
+                            background-color: rgba(221, 30, 30);
+                        }
+
+                        &:nth-child(2) {
+                            background-color: rgba(14, 167, 0);
+                        }
+
+                        &:nth-child(3) {
+                            background-color: rgb(242, 190, 21);
+                        }
+
+                        h3 {
+                            display: flex;
+                            flex-direction: column;
+                            margin-bottom: 15px;
+
+                            svg {
+                                font-size: 2rem;
+                                margin-bottom: 10px;
+                            }
+                        }
+
+                        p {
+                            text-align: center;
+                            font-size: .9rem;
+                        }
+
+                        &:hover {
+                            scale: 1.01;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
