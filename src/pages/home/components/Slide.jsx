@@ -15,6 +15,9 @@ export default function Slide({ children, nav }) {
             }
         })
 
+        console.log(12313);
+        
+
         let next
         let ps
         if (value === true) {
@@ -58,6 +61,7 @@ export default function Slide({ children, nav }) {
             }
         }
     }
+
     return (
         <div className={styles.slide} onTouchStart={(event) => setPosition(event.touches[0].clientX)} onTouchEnd={(event) => {
             if (event.changedTouches[0].clientX < position - 120) {

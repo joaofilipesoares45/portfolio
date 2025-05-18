@@ -1,17 +1,17 @@
-import { formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faArrowRight, faImage, faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faEllipsis, faLink } from "@fortawesome/free-solid-svg-icons"
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons"
-import { useContext, useEffect, useState } from "react";
-import { DataContext } from "../../../context/DataContext";
-import NotificationBtn from "../../../Classes/NotificationBtn";
-import { firestore } from "../../../../firebase/app_firebase";
 import { doc, getDoc } from "firebase/firestore";
-import "../css/projetos.css"
+import { useContext, useEffect, useState } from "react";
+import { firestore } from "../../../../firebase/app_firebase";
+import NotificationBtn from "../../../Classes/NotificationBtn";
+import { DataContext } from "../../../context/DataContext";
+import { formCaptureData, openLink, openModal, whatsMsg } from "../../../utils/functions";
+import "../css/projetos.css";
 
 export default function Projetos() {
 
-    const { projetos, newNotification, usuarioAtual } = useContext(DataContext)
+    const { projetos, newNotification, usuarioAtual, setProjeto } = useContext(DataContext)
 
     const [user, setUser] = useState({})
     useEffect(() => {
@@ -58,7 +58,10 @@ export default function Projetos() {
                                     onClick={() => {
                                         whatsMsg("86988667039", "Estou interessado no projeto: " + nome)
                                     }} />
-                                <FontAwesomeIcon icon={faEllipsis} />
+                                <FontAwesomeIcon icon={faImage} onClick={() => {
+                                    setProjeto(item)
+                                    openModal("view-project")
+                                }}/>
                             </nav>
                         </div>
                     )

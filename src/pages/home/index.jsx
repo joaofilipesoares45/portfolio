@@ -18,6 +18,7 @@ import Sobre from "./components/sobre";
 import "./css/index.css";
 import "./css/dark-mode.css";
 import Servicos from "./components/servicos";
+import ViewProject from "./components/ViewProject";
 
 const list = [
     1, 2, 3, 4, 5
@@ -63,7 +64,7 @@ export default function Home() {
             <header>
                 <FontAwesomeIcon icon={faBars} onClick={() => openModal("sidebar")} />
                 <nav onClick={goTo}>
-                    <a href="#sobre">Sobre mim</a> 
+                    <a href="#sobre">Sobre mim</a>
                     <a href="#servicos">Serviços</a>
                     <a href="#projetos">Projetos</a>
                     <a href="#habilidades">Tecnologias</a>
@@ -310,6 +311,7 @@ export default function Home() {
 
             <Sidebar />
             <DownloadCV />
+            <ViewProject />
         </div>
     )
 }
