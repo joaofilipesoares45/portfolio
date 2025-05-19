@@ -1,14 +1,13 @@
 .modal.view-project {
     font-family: "Cascadia Mono", sans-serif !important;
     background-color: rgba(0, 0, 0, 0.566);
-    scale: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    &[open] {
-        scale: 1;
-        transition: scale .2s;
+    &[open] .content {
+        animation: var(--show-top);
     }
 
     .content {
@@ -55,11 +54,33 @@
                     align-items: center;
                     width: 100%;
                     max-width: 900px;
-                    min-height: 56.22%;
                     display: none;
+                    position: relative;
 
-                    &[view="true"]{
+                    &[view="true"] {
                         display: flex;
+                    }
+
+                    &[load]::after {
+                        opacity: 0;
+                    }
+
+                    &::after {
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+
+                        background: linear-gradient(35deg, rgb(232, 232, 232), rgb(175, 171, 255), rgb(232, 232, 232));
+                        background-size: 400%;
+
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
+
+                        opacity: 1;
+                        transition: .2s;
+                        animation: background-move 1s infinite;
                     }
 
                     img {
@@ -68,7 +89,7 @@
                     }
                 }
 
-                & + nav {
+                &+nav {
                     display: flex;
                     justify-content: center;
                     padding: 10px;
@@ -79,7 +100,7 @@
                         padding: 5px;
                         background-color: rgb(255, 255, 255);
                         border: solid 2px black;
-                        
+
                         &[selected="true"] {
                             background-color: black;
                         }
@@ -87,7 +108,7 @@
                 }
             }
 
-            
+
         }
     }
 }

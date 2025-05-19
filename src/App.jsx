@@ -1,5 +1,5 @@
 import { DataProvider } from "./context/DataContext"
-import Notification from "./pages/components/Notification"
+import Notification from "./components/Notification"
 import RouterApp from "./Routes"
 
 function App() {

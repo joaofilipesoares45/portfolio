@@ -25,7 +25,7 @@ export default function Login({ setComponent }) {
             return
         }
         if (user) {
-            newNotification(3, "Login", "Sua conta foi criada com sucesso", [new NotificationBtn({
+            newNotification(3, "Login", "Logado com sucesso", [new NotificationBtn({
                 text: "Prosseguir", tag: "button", fun: () => {
                     localStorage.setItem("portfolio:user", JSON.stringify(user.id))
                     navigate("/")

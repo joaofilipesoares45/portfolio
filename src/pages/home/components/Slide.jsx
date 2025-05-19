@@ -15,9 +15,6 @@ export default function Slide({ children, nav }) {
             }
         })
 
-        console.log(12313);
-        
-
         let next
         let ps
         if (value === true) {

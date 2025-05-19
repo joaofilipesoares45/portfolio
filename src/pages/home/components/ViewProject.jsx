@@ -23,7 +23,9 @@ export default function ViewProject() {
                                 {projeto.imgs.map((item, index) => {
                                     return (
                                         <div className="item img" key={"img" + index} view={index === 0 && "true"}>
-                                            <img src={item} alt="" />
+                                            <img src={item} alt="" onLoad={({target}) => {
+                                                target.parentElement.setAttribute("load", "")
+                                            }}/>
                                         </div>
                                     )
                                 })}
