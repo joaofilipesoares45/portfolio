@@ -21,7 +21,7 @@ export default function AdminPage() {
             const userDoc = doc(firestore, "usuarios", usuarioAtual)
             const user = (await getDoc(userDoc)).data()
             if (!user.acesso) {
-                navigate("/")
+                navigate("/*")
             }
         }
         getUser()

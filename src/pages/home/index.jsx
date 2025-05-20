@@ -64,7 +64,7 @@ export default function Home() {
             <header>
                 <FontAwesomeIcon icon={faBars} onClick={() => openModal("sidebar")} />
                 <nav onClick={goTo}>
-                    <a href="#sobre">Sobre mim</a>
+                    <a href="#sobre">Sobre</a>
                     <a href="#servicos">Serviços</a>
                     <a href="#projetos">Projetos</a>
                     <a href="#habilidades">Tecnologias</a>

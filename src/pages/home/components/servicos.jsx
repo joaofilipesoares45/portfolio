@@ -6,7 +6,7 @@ export default function Servicos() {
     return (
         <div className="sect servicos" id="servicos">
             <div className="head">
-                <h2>Servicos</h2>
+                <h2>Serviços</h2>
             </div>
             <div className="list">
                 <div className="item">
