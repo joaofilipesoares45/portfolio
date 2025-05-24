@@ -13,7 +13,7 @@ export default function AdminPage() {
     const navigate = useNavigate()
 
     if (!usuarioAtual) {
-        navigate("/")
+        navigate("/*")
     }
 
     useEffect(() => {
