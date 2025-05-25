@@ -25,10 +25,15 @@ export default function Notification() {
                         <nav>
                             {notification.options.map((el, index) => {
                                 if (el.tag === "button") {
-                                    return <button onClick={el.fun === "close" ? close : el.fun} key={"opt" + index} style={{ "--back": el.color }}>{el.text}</button>
+                                    return <button onClick={() => {
+                                        close()
+                                        if (el.fun !== "close") {
+                                            el.fun()
+                                        }
+                                    }} key={"opt" + index} style={{ "--back": el.color }}>{el.text}</button>
                                 }
                                 if (el.tag === "a") {
-                                    return <a href={el.link} onClick={el.fun === "close" ? close : el.fun} key={"opt" + index} style={{ color: el.color }}>{el.text}</a>
+                                    return <a href={el.link} onClick={() => el.fun === "close" ? close : el.fun} key={"opt" + index} style={{ color: el.color }}>{el.text}</a>
                                 }
                             })}
                         </nav>}

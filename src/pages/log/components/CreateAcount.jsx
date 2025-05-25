@@ -1,12 +1,12 @@
-import { closeModal, formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
+import { faGithub, faInstagram, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin, faWhatsapp, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { addDoc, collection, getDocs } from "firebase/firestore";
-import { firestore } from "../../../../firebase/app_firebase";
-import { useNavigate } from "react-router"
 import { useContext } from "react";
-import { DataContext } from "../../../context/DataContext";
+import { useNavigate } from "react-router";
+import { firestore } from "../../../../firebase/app_firebase";
 import NotificationBtn from "../../../Classes/NotificationBtn";
+import { DataContext } from "../../../context/DataContext";
+import { formCaptureData, openLink, whatsMsg } from "../../../utils/functions";
 
 export default function CreateAcount({ setComponent }) {
     const navigate = useNavigate()
@@ -17,11 +17,19 @@ export default function CreateAcount({ setComponent }) {
         event.preventDefault()
         const data = formCaptureData(event.target)
 
+        if (!data.email || !data.senha) {
+            return newNotification(3, "Login", "Preencha todos os dados!", [new NotificationBtn({
+                text: "Vou Preencher", tag: "button", fun: "close", color: "blue"
+            })])
+        }
+
         const res1 = await getDocs(usersRef)
         const usersList = res1.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
 
         if (usersList.filter((el) => el.email === data.email).length > 0) {
-            return
+            return newNotification(3, "Login", "Email já cadastrado!", [new NotificationBtn({
+                text: "Tente novamente", tag: "button", fun: "close", color: "blue"
+            })])
         }
 
         const res2 = await addDoc(usersRef, data)
@@ -31,7 +39,6 @@ export default function CreateAcount({ setComponent }) {
                 localStorage.setItem("portfolio:user", JSON.stringify(res2.id))
                 navigate("/")
                 setUsuarioAtual()
-                closeModal()
             }, color: "blue"
         })])
     }
