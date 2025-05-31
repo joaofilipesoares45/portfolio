@@ -2,9 +2,10 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { DataContext } from "../../../context/DataContext";
-import Slide from "./Slide";
+// import Slide from "./Slide";
 import { closeModal } from "../../../utils/functions";
 import "../css/view-project.css"
+import Slide from "../../../components/Slide";
 
 export default function ViewProject() {
     const { projeto, setProjeto } = useContext(DataContext)
@@ -18,44 +19,17 @@ export default function ViewProject() {
                         <FontAwesomeIcon icon={faXmark} onClick={() => { closeModal("view-project"); setProjeto() }} />
                     </div>
                     <div className="main">
-                        <Slide children={
-                            <div className="list slide-imgs">
-                                {projeto.imgs.map((item, index) => {
+                        <Slide len={projeto.imgs.length}>
+                            {projeto.imgs.map((item, index) => {
                                     return (
-                                        <div className="item img" key={"img" + index} view={index === 0 && "true"}>
+                                        <div className="item img" key={"img" + index} >
                                             <img src={item} alt="" onLoad={({target}) => {
                                                 target.parentElement.setAttribute("load", "")
                                             }}/>
                                         </div>
                                     )
                                 })}
-                            </div>
-                        } nav={
-                            <nav onClick={({ target }) => {
-                                if (target.tagName !== "BUTTON") {
-                                    return
-                                }
-                                const listBtn = target.parentElement.querySelectorAll("button")
-                                const listImgs = document.querySelectorAll(".view-project .slide-imgs .item")
-
-                                listBtn.forEach(el => el.removeAttribute("selected"));
-                                target.setAttribute("selected", "true")
-
-                                listImgs.forEach((el,index) => {
-                                    el.removeAttribute("view")
-
-                                    if (index === Number(target.id)) {
-                                        el.setAttribute("view", "true")
-                                    }
-                                })
-                            }}>
-                                {projeto.imgs.map((_, index) => {
-                                    return (
-                                        <button key={"btnb" + index} id={index} selected={index === 0 && "true"}></button>
-                                    )
-                                })}
-                            </nav>
-                        } />
+                        </Slide>
                     </div>
                 </div>
             }

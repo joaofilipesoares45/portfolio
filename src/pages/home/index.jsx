@@ -12,17 +12,13 @@ import { baseUrl, logOut, openLink, openModal, whatsMsg } from "../../utils/func
 import DownloadCV from "./components/DownloadCV";
 import Habilidades from "./components/habilidades";
 import Projetos from "./components/projetos";
-import Sidebar from "./components/sidebar";
-import Slide from "./components/Slide";
-import Sobre from "./components/sobre";
-import "./css/index.css";
-import "./css/dark-mode.css";
 import Servicos from "./components/servicos";
+import Sidebar from "./components/sidebar";
+import Sobre from "./components/sobre";
 import ViewProject from "./components/ViewProject";
+import "./css/dark-mode.css";
+import "./css/index.css";
 
-const list = [
-    1, 2, 3, 4, 5
-]
 export default function Home() {
     const { usuarioAtual, colorMode, setColorMode } = useContext(DataContext)
 
@@ -249,50 +245,6 @@ export default function Home() {
                 <Servicos />
                 <Projetos />
                 <Habilidades />
-                <Slide children={
-                    <div className="list ex-slide">
-                        {list.map((item, index) => {
-                            return (
-                                <div className="item" key={item + index} view={index === 0 ? "true" : "false"}>
-                                    {item}
-                                </div>
-                            )
-                        })}
-                    </div>
-                } nav={
-                    <nav onClick={({ target }) => {
-                        if (target.tagName === "BUTTON") {
-                            const index = target.getAttribute("index")
-                            const slide = document.querySelectorAll(".ex-slide .item")
-
-                            target.parentElement.querySelectorAll("button").forEach((btn) => {
-                                btn.removeAttribute("selected")
-                            })
-
-                            target.setAttribute("selected", "true")
-                            slide.forEach((div, i) => {
-                                div.removeAttribute("prev")
-                                if (div.hasAttribute("view")) {
-                                    div.removeAttribute("view")
-                                }
-
-                                if (i === Number(index)) {
-                                    div.setAttribute("view", "true")
-                                    if (i - 1 >= 0) {
-                                        slide[i - 1].setAttribute("prev", "true")
-                                    }
-                                    if (i + 1 < slide.length) {
-                                        slide[i + 1].setAttribute("prev", "false")
-                                    }
-                                }
-                            })
-                        }
-                    }}>
-                        {list.map((el, index) => {
-                            return <button key={"btn" + el} index={index}></button>
-                        })}
-                    </nav>
-                } />
             </main>
 
             <footer className="bottom-page">

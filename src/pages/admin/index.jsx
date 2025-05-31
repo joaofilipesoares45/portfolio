@@ -7,6 +7,7 @@ import { DataContext } from "../../context/DataContext";
 import { useNavigate } from "react-router"
 import { doc, getDoc } from "firebase/firestore";
 import { firestore } from "../../../firebase/app_firebase";
+import Slide from "../../components/Slide";
 
 export default function AdminPage() {
     const { usuarioAtual } = useContext(DataContext)
@@ -37,6 +38,16 @@ export default function AdminPage() {
             </header>
             <NewProject />
             <Projetos />
+
+            <Slide len={3}>
+                {[1, 2, 3].map((item, index) => {
+                    return (
+                        <div className="item" key={"item" + index} visible={index === 0 && "true"}>
+                            {item}
+                        </div>
+                    )
+                })}
+            </Slide>
         </div>
     )
 }

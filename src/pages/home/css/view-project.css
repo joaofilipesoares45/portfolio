@@ -43,23 +43,17 @@
         }
 
         .main {
-            .slide-imgs {
+            .slide-base {
                 display: flex;
                 justify-content: center;
                 padding-top: 10px;
 
                 .item {
-                    display: flex;
                     justify-content: center;
                     align-items: center;
                     width: 100%;
                     max-width: 900px;
-                    display: none;
                     position: relative;
-
-                    &[view="true"] {
-                        display: flex;
-                    }
 
                     &[load]::after {
                         opacity: 0;
@@ -89,26 +83,7 @@
                     }
                 }
 
-                &+nav {
-                    display: flex;
-                    justify-content: center;
-                    padding: 10px;
-                    gap: 10px;
-
-                    button {
-                        border-radius: 50%;
-                        padding: 5px;
-                        background-color: rgb(255, 255, 255);
-                        border: solid 2px black;
-
-                        &[selected="true"] {
-                            background-color: black;
-                        }
-                    }
-                }
             }
-
-
         }
     }
 }
