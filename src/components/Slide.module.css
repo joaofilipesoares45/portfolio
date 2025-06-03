@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     background-color: transparent;
-    margin-block: 50px;
     gap: 10px;
 }
 
@@ -28,10 +27,13 @@
 
 .nav {
     display: flex;
+    flex-direction: row !important;
     justify-content: center;
     gap: 10px;
+    position: initial !important;
 
     button {
+        width: fit-content !important;
         padding: 5px;
         border-radius: 50%;
         border: solid 2px black;

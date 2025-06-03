@@ -259,7 +259,6 @@
 
     .modal.view-project {
         font-family: "Cascadia Mono", sans-serif !important;
-        background-color: rgba(0, 0, 0, 0.566);
         
         display: flex;
         justify-content: center;
@@ -270,7 +269,6 @@
             justify-content: center;
             flex-direction: column;
             width: calc(100% - 20px);
-            background-color: rgb(26, 43, 110);
             border-radius: 5px;
             overflow: hidden;
             

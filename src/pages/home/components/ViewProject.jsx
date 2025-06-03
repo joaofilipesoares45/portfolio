@@ -14,21 +14,18 @@ export default function ViewProject() {
         <div className="modal view-project">
             {projeto &&
                 <div className="content">
-                    <div className="head">
-                        <h2>Projeto:<span>{projeto.nome}</span></h2>
-                        <FontAwesomeIcon icon={faXmark} onClick={() => { closeModal("view-project"); setProjeto() }} />
-                    </div>
                     <div className="main">
+                        <FontAwesomeIcon icon={faXmark} onClick={() => { closeModal("view-project"); setProjeto() }} />
                         <Slide len={projeto.imgs.length}>
                             {projeto.imgs.map((item, index) => {
-                                    return (
-                                        <div className="item img" key={"img" + index} >
-                                            <img src={item} alt="" onLoad={({target}) => {
-                                                target.parentElement.setAttribute("load", "")
-                                            }}/>
-                                        </div>
-                                    )
-                                })}
+                                return (
+                                    <div className="item img" key={"img" + index} >
+                                        <img src={item} alt="" onLoad={({ target }) => {
+                                            target.parentElement.setAttribute("load", "")
+                                        }} />
+                                    </div>
+                                )
+                            })}
                         </Slide>
                     </div>
                 </div>

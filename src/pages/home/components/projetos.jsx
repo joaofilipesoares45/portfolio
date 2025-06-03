@@ -50,7 +50,7 @@ export default function Projetos() {
                                 <FontAwesomeIcon icon={faImage} onClick={() => {
                                     setProjeto(item)
                                     openModal("view-project")
-                                }}/>
+                                }} />
                             </nav>
                         </div>
                     )

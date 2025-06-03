@@ -66,7 +66,7 @@ export default function Slide({ len, children }) {
                 slideRoller("right")
             }
         }}>
-            <div className={styles.list + " list"} ref={list}>
+            <div className={`${styles.list} list`} ref={list}>
                 {children}
             </div>
 
