@@ -1,5 +1,5 @@
 import { faGithub, faInstagram, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faEyeSlash, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { collection, getDocs } from "firebase/firestore";
 import { useNavigate } from "react-router";
@@ -13,6 +13,7 @@ export default function Login({ setComponent }) {
     const navigate = useNavigate()
     const { setUsuarioAtual, newNotification } = useContext(DataContext)
     const [visiblePassword, setVisiblePassword] = useState(false)
+    const [load, setLoad] = useState()
 
     const submit = async (event) => {
         event.preventDefault()
@@ -25,7 +26,9 @@ export default function Login({ setComponent }) {
         }
 
         const usersRef = collection(firestore, "usuarios")
+        setLoad(true)
         const res = await getDocs(usersRef)
+        setLoad()
         const users = res.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
 
         const user = users.filter((el) => el.email === data.email && el.senha === data.senha)[0]
@@ -91,7 +94,7 @@ export default function Login({ setComponent }) {
                 </div>
                 <nav>
                     <p onClick={() => setComponent(false)}>Não tem uma conta?</p>
-                    <button type="submit">Login</button>
+                    <button type="submit">{load ? <FontAwesomeIcon icon={faSpinner}/> : "Login"}</button>
                 </nav>
             </form>
         </div>

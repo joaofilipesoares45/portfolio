@@ -34,7 +34,7 @@
 
     button {
         width: fit-content !important;
-        padding: 5px;
+        padding: 4px;
         border-radius: 50%;
         border: solid 2px black;
         --back: black;

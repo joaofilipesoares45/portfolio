@@ -12,7 +12,7 @@ export default function Slide({ len, children }) {
         const positions = {
             in: 0,
             to: 0,
-            side: 0,
+            side: "left",
         }
 
         listSlide.forEach((el, index) => {
@@ -102,7 +102,7 @@ export default function Slide({ len, children }) {
             }}>
                 {Array.from({ length: len }).map((_, index) => {
                     return (
-                        <button key={"slide-btn" + index} id={index}></button>
+                        <button key={"slide-btn" + index} id={index} selected={index === 0 && "true"}></button>
                     )
                 })}
             </nav>

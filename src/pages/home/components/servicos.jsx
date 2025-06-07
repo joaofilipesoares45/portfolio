@@ -53,7 +53,9 @@ export default function Servicos() {
                         newNotification(3, "Erro", "O campo de texto está vazio!", [new NotificationBtn({ text: "Ok, vou preencher", tag: "button", fun: "close", color: "blue" })])
                     }
                 }}>
-                    <textarea name="msgtext" placeholder="Digite aqui sua mensagem!"></textarea>
+                    <textarea name="msgtext" placeholder={`Preciso de um projeto pessoal!`} onDoubleClick={({target}) => {
+                        target.value = target.placeholder
+                    }}></textarea>
                     <button type="submit"><FontAwesomeIcon icon={faArrowRight} /></button>
                 </form>
             </nav>

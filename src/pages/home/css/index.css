@@ -194,14 +194,23 @@
                         .info {
                             margin-bottom: 10px;
 
-                            .fa-user {
+                            .fa-user, .fa-gears {
                                 font-size: 3rem;
                                 margin-bottom: 10px;
+                                cursor: initial;
                             }
 
                             h3 {
+                                position: relative;
                                 font-size: .9rem;
                                 text-wrap: nowrap;
+            
+                                svg {
+                                    position: absolute;
+                                    top: -15px;
+                                    right: 85px;
+                                    font-size: .8rem;
+                                }
                             }
 
                             p {

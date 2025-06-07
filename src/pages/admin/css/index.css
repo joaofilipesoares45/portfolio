@@ -12,7 +12,8 @@
 
         h1 {
             font-size: 1.3rem;
-            a{
+
+            a {
                 color: rgb(255, 255, 255);
                 padding: 10px;
             }
@@ -92,6 +93,7 @@
                     display: flex;
                     flex-direction: row;
                     margin-top: 10px;
+
                     span {
                         font-size: .7rem;
 
@@ -159,12 +161,12 @@
 
     .sect {
         margin: 10px;
-        border-radius: 10px;
+        border-radius: 5px;
 
         padding: 10px;
         background-color: rgb(127, 185, 255);
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.407);
-        padding-block: 60px;
+        padding-block: 20px;
 
         &.projetos {
             .list {
@@ -235,10 +237,45 @@
                             color: white;
                             border-radius: 50%;
 
-                            &.fa-link{
+                            &.fa-link {
                                 padding: 10px 8.5px;
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        &.usuarios {
+
+            .list {
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                padding: 10px;
+                margin-top: 10px;
+
+                .head {
+                    display: grid;
+                    grid-template-columns: 20px repeat(3, 1fr);
+                    margin-bottom: 10px;
+                    font-size: .9rem;
+                    gap: 10px;
+                }
+
+                .item {
+                    display: grid;
+                    grid-template-columns: 20px repeat(3, 1fr);
+                    border-bottom: solid 2px gainsboro;
+                    padding-bottom: 5px;
+                    margin-bottom: 5px;
+                    font-size: .8rem;
+                    gap: 10px;
+                    text-wrap: nowrap;
+
+                    p {
+                        
+                        overflow: scroll;
                     }
                 }
             }

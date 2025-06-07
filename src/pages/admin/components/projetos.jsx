@@ -8,6 +8,7 @@ import { firestore } from "../../../../firebase/app_firebase";
 
 export default function Projetos() {
     const { projetos, setProjeto } = useContext(DataContext)
+    
     const deleteProject = (id) => {
         const projectDoc = doc(firestore, "projetos", id)
         deleteDoc(projectDoc)

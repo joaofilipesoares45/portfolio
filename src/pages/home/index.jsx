@@ -1,5 +1,5 @@
 import { faCss, faGithub, faHtml5, faInstagram, faJs, faLinkedin, faReact, faVuejs, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faArrowAltCircleDown, faArrowDown, faArrowRightFromBracket, faBars, faCode, faMoon, faSun, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faArrowAltCircleDown, faArrowDown, faArrowRightFromBracket, faBars, faCode, faGears, faMoon, faPencil, faSun, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { doc, getDoc } from "firebase/firestore";
@@ -18,6 +18,7 @@ import Sobre from "./components/sobre";
 import ViewProject from "./components/ViewProject";
 import "./css/dark-mode.css";
 import "./css/index.css";
+import EditAcount from "./components/EditAcount";
 
 export default function Home() {
     const { usuarioAtual, colorMode, setColorMode } = useContext(DataContext)
@@ -77,8 +78,8 @@ export default function Home() {
                         {user.nome ? <FontAwesomeIcon icon={faUser} /> : <a href={baseUrl + "/login"}>Login </a>}
                         {user.nome && <div className="login-drop-down">
                             <div className="info">
-                                <FontAwesomeIcon icon={faUser} />
-                                <h3>{user.nome}</h3>
+                                <FontAwesomeIcon icon={user.acesso === "total" ? faGears : faUser} />
+                                <h3>{user.nome} <FontAwesomeIcon icon={faPencil} onClick={() => {openModal("edit-acount"); document.querySelector(".login-drop-down").removeAttribute("visible")}}/></h3>
                                 <p>{user.email}</p>
                             </div>
                             {user.acesso === "total" && <span onClick={() => navigate("/admin")}>Administrador</span>}
@@ -264,6 +265,7 @@ export default function Home() {
             <Sidebar />
             <DownloadCV />
             <ViewProject />
+            <EditAcount/>
         </div>
     )
 }

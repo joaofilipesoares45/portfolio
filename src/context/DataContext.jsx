@@ -25,7 +25,7 @@ export function DataProvider({ children }) {
 
     useEffect(() => {
         getData(collection(firestore, 'projetos'), setProjetos)
-    }, [projetos])
+    }, [])
 
     useEffect(() => {
         if (localStorage.getItem("portfolio:user") !== null) {

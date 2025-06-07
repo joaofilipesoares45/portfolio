@@ -239,6 +239,10 @@
                             font-family: "Cascadia Mono", sans-serif !important;
                         }
 
+                        svg {
+                            animation: spin 1s infinite;
+                        }
+
                         p {
                             font-size: .7rem;
 

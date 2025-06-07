@@ -8,6 +8,7 @@ import { useNavigate } from "react-router"
 import { doc, getDoc } from "firebase/firestore";
 import { firestore } from "../../../firebase/app_firebase";
 import Slide from "../../components/Slide";
+import Usuarios from "./components/Usuarios";
 
 export default function AdminPage() {
     const { usuarioAtual } = useContext(DataContext)
@@ -38,6 +39,7 @@ export default function AdminPage() {
             </header>
             <NewProject />
             <Projetos />
+            <Usuarios/>
 
             <Slide len={3}>
                 {[1, 2, 3].map((item, index) => {
