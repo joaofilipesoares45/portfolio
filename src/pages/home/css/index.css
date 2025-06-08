@@ -408,7 +408,20 @@
             padding: 10px;
             background-color: rgb(76, 156, 255);
             box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.407);
-            padding-block: 60px;
+            padding-block: 30px;
+            transition: .3s;
+            animation: var(--show-down);
+
+            * {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            &[visible]{
+                * {
+                    opacity: 1;
+                    transform: none;
+                }
+            }
         }
 
         .ex-slide {

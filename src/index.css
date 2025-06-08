@@ -198,23 +198,23 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 @keyframes shake {
   0% {
-    transform: translateX(3px);
+    transform: translateX(0px);
   }
 
   25% {
-    transform: translateX(-3px);
+    transform: translateX(6px);
   }
 
   50% {
-    transform: translateX(3px);
+    transform: translateX(0px);
   }
 
   75% {
-    transform: translateX(-3px);
+    transform: translateX(-6px);
   }
 
   100% {
-    transform: none;
+    transform: translateX(0px);
   }
 }
 

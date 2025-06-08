@@ -10,6 +10,37 @@
 
                     .img {
                         display: flex;
+                        align-self: center;
+                        position: relative;
+                        border-radius: 5px;
+                        overflow: hidden;
+
+                        svg {
+                            position: absolute;
+                            color: blue;
+                            font-size: 3rem;
+                            pointer-events: none;
+
+                            &.fa-gear {
+                                animation: spin 3s linear infinite;
+                                left: 30px;
+                                bottom: 30px;
+
+                                &.small {
+                                    font-size: 2rem;
+                                    left: 75px;
+                                    bottom: 28px;
+                                    animation: spin 3s linear infinite reverse;
+                                }
+                            }
+
+                            &.fa-circle-user {
+                                top: 15px;
+                                right: 15px;
+                                font-size: 1.5rem;
+                                /* animation: shake 1s linear infinite; */
+                            }
+                        }
                     }
 
                     img {
@@ -32,7 +63,7 @@
                             text-align: start;
                             text-wrap: nowrap;
                             flex-wrap: wrap;
-                            
+
                             font-size: 1.8rem;
                             margin-bottom: 20px;
 
@@ -42,7 +73,7 @@
                             }
                         }
 
-                        h3 + p {
+                        h3+p {
                             align-self: flex-start;
                         }
 
@@ -156,13 +187,44 @@
                         align-items: center;
                         gap: 10px;
                         height: 100%;
-            
+
+                        .img {
+                            display: flex;
+                            align-self: center;
+                            position: relative;
+
+                            svg {
+                                position: absolute;
+                                color: blue;
+
+                                font-size: 3rem;
+                                pointer-events: none;
+
+                                &.fa-gear {
+                                    left: 15px;
+                                    bottom: 25px;
+
+                                    &.small {
+                                        font-size: 2.5rem;
+                                        left: 57px;
+                                        bottom: 17px;
+                                    }
+                                }
+
+                                &.fa-code-commit {
+                                    top: 10px;
+                                    right: 10px;
+                                    font-size: 1.5rem;
+                                }
+                            }
+                        }
+
                         img {
                             width: 100%;
                             max-width: 500px;
                             border-radius: 5px;
-                            z-index: 0;
                         }
+
 
                         .declare {
                             display: flex;
@@ -341,7 +403,7 @@
                                     nav {
                                         display: flex;
                                         gap: 10px;
-                                        
+
                                         button {
                                             gap: 5px;
                                             padding: 7px;

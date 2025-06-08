@@ -115,12 +115,16 @@ export default function Projetos() {
                         <button onClick={() => {
                             if (page >= 1) {
                                 setPage(page - 1)
+                            }else{
+                                setPage(divide(projetos).length - 1)
                             }
                         }}><FontAwesomeIcon icon={faChevronLeft} /></button>
                         <span>{page + 1}</span>
                         <button onClick={() => {
                             if (page + 1 < divide(projetos).length) {
                                 setPage(page + 1)
+                            }else {
+                                setPage(0)
                             }
                         }}><FontAwesomeIcon icon={faChevronRight} /></button>
                     </nav>

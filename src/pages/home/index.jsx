@@ -42,7 +42,7 @@ export default function Home() {
 
         if (target.tagName === "A" || target.tagName === "svg") {
             const element = document.querySelector(target.getAttribute("href"))
-            document.querySelector(".page.home").scrollTo(0, (element.offsetTop - 65))
+            document.querySelector(".page.home").scrollTo(0, element.offsetTop - 65)
         }
     }
 
@@ -57,7 +57,18 @@ export default function Home() {
     }
 
     return (
-        <div className="page home" colormode={String(colorMode)}>
+        <div className="page home" colormode={String(colorMode)} onScroll={() => {
+            const alturaJanela = window.innerHeight;
+            const sects = document.querySelectorAll(".page.home .sect")
+            sects.forEach((item) => {
+                const rect = item.getBoundingClientRect();            
+                if (rect.top < alturaJanela) {
+                    setTimeout(() => item.setAttribute("visible", ""))
+                } else {
+                    item.removeAttribute("visible")
+                }
+            })
+        }}>
             <header>
                 <FontAwesomeIcon icon={faBars} onClick={() => openModal("sidebar")} />
                 <nav onClick={goTo}>
@@ -79,7 +90,7 @@ export default function Home() {
                         {user.nome && <div className="login-drop-down">
                             <div className="info">
                                 <FontAwesomeIcon icon={user.acesso === "total" ? faGears : faUser} />
-                                <h3>{user.nome} <FontAwesomeIcon icon={faPencil} onClick={() => {openModal("edit-acount"); document.querySelector(".login-drop-down").removeAttribute("visible")}}/></h3>
+                                <h3>{user.nome} <FontAwesomeIcon icon={faPencil} onClick={() => { openModal("edit-acount"); document.querySelector(".login-drop-down").removeAttribute("visible") }} /></h3>
                                 <p>{user.email}</p>
                             </div>
                             {user.acesso === "total" && <span onClick={() => navigate("/admin")}>Administrador</span>}
@@ -265,7 +276,7 @@ export default function Home() {
             <Sidebar />
             <DownloadCV />
             <ViewProject />
-            <EditAcount/>
+            <EditAcount />
         </div>
     )
 }

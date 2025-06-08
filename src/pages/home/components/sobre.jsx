@@ -1,6 +1,6 @@
 import { openModal, whatsMsg } from "../../../utils/functions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleDown, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
+import { faArrowAltCircleDown, faArrowUpRightFromSquare, faCircleUser, faGear } from "@fortawesome/free-solid-svg-icons"
 import "../css/sobre.css"
 
 export default function Sobre() {
@@ -8,6 +8,9 @@ export default function Sobre() {
         <section className="sect sobre" id="sobre">
             <div className="info">
                 <div className="img">
+                    <FontAwesomeIcon icon={faGear} className="small" />
+                    <FontAwesomeIcon icon={faGear} />
+                    <FontAwesomeIcon icon={faCircleUser} />
                     <img src={"/portfolio/about3.jpg"} alt="" />
                 </div>
 
