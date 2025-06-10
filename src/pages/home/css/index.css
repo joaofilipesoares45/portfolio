@@ -194,7 +194,8 @@
                         .info {
                             margin-bottom: 10px;
 
-                            .fa-user, .fa-gears {
+                            .fa-user,
+                            .fa-gears {
                                 font-size: 3rem;
                                 margin-bottom: 10px;
                                 cursor: initial;
@@ -204,7 +205,7 @@
                                 position: relative;
                                 font-size: .9rem;
                                 text-wrap: nowrap;
-            
+
                                 svg {
                                     position: absolute;
                                     top: -15px;
@@ -416,7 +417,8 @@
                 opacity: 0;
                 transform: translateX(-100px);
             }
-            &[visible]{
+
+            &[visible] {
                 * {
                     opacity: 1;
                     transform: none;
@@ -548,43 +550,51 @@
 
     .sidebar {
         font-family: "Cascadia Mono", sans-serif;
-        background-color: rgba(0, 0, 0, 0.316);
+        background-color: rgba(0, 0, 0, 0.856);
+        backdrop-filter: blur(2px);
 
-        &[open] .content {
-            animation: var(--show-right);
+        &[open] .content * {
+            animation: var(--show-top);
         }
 
         .content {
             display: flex;
             flex-direction: column;
-
-            background-color: rgb(59, 87, 157);
+            justify-content: center;
             color: white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.566);
-            height: min-content;
+
 
             width: 100%;
-            max-width: 300px;
             height: 100%;
             padding: 10px;
-            padding-bottom: 20px;
-            transition: width .3s;
+            padding-bottom: 100px;
+            gap: 20px;
+            transition: .3s;
 
-            h2 {
+            svg {
                 align-self: center;
-                padding: 10px;
+                padding: 8px 11px;
+                border-radius: 50%;
+                background-color: white;
+                color: black;
+                font-size: 1.3rem;
             }
 
             nav {
                 display: flex;
+                align-items: center;
+                justify-content: center;
                 flex-direction: column;
                 gap: 10px;
 
                 a {
-                    font-size: .8rem;
+                    text-align: center;
+                    width: 100%;
+                    max-width: 120px;
+                    font-size: .9rem;
                     font-weight: 600;
                     color: white;
-                    border-bottom: solid 3px white;
+                    text-shadow: 0 0 5px rgb(105, 105, 105);
                     padding: 10px;
                     border-radius: 3px;
                     transition: .2s;

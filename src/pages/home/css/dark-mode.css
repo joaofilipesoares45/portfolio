@@ -144,20 +144,15 @@
 
     .sidebar {
         font-family: "Cascadia Mono", sans-serif;
-        background-color: rgba(0, 0, 0, 0.316);
-
+        
         .content {
-            background-color: rgb(13, 48, 136);
             color: white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.566);
-            transition: width .3s;
 
             nav {
                 display: flex;
                 flex-direction: column;
 
                 a {
-                    font-size: .8rem;
                     font-weight: 600;
                     color: white;
                     padding: 10px;

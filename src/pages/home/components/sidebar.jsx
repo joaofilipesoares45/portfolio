@@ -1,4 +1,6 @@
 import { closeModal } from "../../../utils/functions"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faXmark} from "@fortawesome/free-solid-svg-icons"
 
 export default function Sidebar() {
     const goTo = (e) => {
@@ -18,7 +20,7 @@ export default function Sidebar() {
             }
         }}>
             <div className="content">
-                <h2>Menu</h2>
+                <FontAwesomeIcon icon={faXmark} onClick={() => closeModal("sidebar")}/>
                 <nav onClick={goTo}>
                     <a href="#sobre">Sobre</a>
                     <a href="#servicos">Serviços</a>
