@@ -234,16 +234,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
   overflow-x: hidden !important;
 }
 
-@media (max-height: 900px) {
-  .page {
-    width: 100dvw;
-    height: 100dvh;
-    min-width: 100vw !important;
-    min-height: 100vh !important;
-    overflow-x: hidden !important;
-  }
-}
-
 .modal {
   position: fixed;
   top: 0;
@@ -262,5 +252,36 @@ input[type=date]::-webkit-calendar-picker-indicator {
     opacity: 1;
     pointer-events: all;
     scale: 1;
+  }
+}
+
+@media (max-height: 900px) {
+  .page {
+    width: 100dvw;
+    height: 100dvh;
+    min-width: 100dvw !important;
+    min-height: 100dvh !important;
+    overflow-x: hidden !important;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100dvw;
+    height: 100dvh;
+    min-width: 100dvw !important;
+    min-height: 100dvh !important;
+    transition: .3s, top 0s !important;
+    transition-delay: .3s;
+    pointer-events: none;
+    opacity: 0;
+
+    &[open] {
+      opacity: 1;
+      pointer-events: all;
+      scale: 1;
+    }
   }
 }
