@@ -111,12 +111,81 @@
     }
 
     .form-edit-acount {
+        background-color: rgba(0, 0, 0, 0.275);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cascadia Mono", sans-serif;
+
         form {
-            .head {}
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: white;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.368);
+            border-radius: 3px;
+            width: calc(100% - 20px);
+            max-width: 450px;
+            padding: 10px;
 
-            .inputs {}
+            .head {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: solid 2px black;
+                padding-bottom: 5px;
 
-            nav {}
+                h2 {
+                    font-size: 1rem;
+                }
+            }
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3px;
+
+                    label {
+                        font-size: .9rem;
+                        opacity: .7;
+                    }
+
+                    input {
+                        padding: 10px;
+                        font-size: .9rem;
+                        font-family: "Cascadia Mono", sans-serif;
+                        background-color: rgb(236, 236, 255);
+
+                        &:focus {
+                            background-color: rgb(109, 109, 255);
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            nav {
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+                width: 100%;
+
+                button {
+                    padding: 10px;
+                    font-size: .8rem;
+                    font-weight: 450;
+                    font-family: "Cascadia Mono", sans-serif;
+
+                    background-color: rgb(109, 109, 255);
+                    color: white;
+                    --back:blue;
+                    --color: white;
+                }
+            }
         }
     }
 }
