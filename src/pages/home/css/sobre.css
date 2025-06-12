@@ -129,7 +129,7 @@
                                         align-items: center;
                                         gap: 5px;
                                         padding: 10px;
-                                        font-family: "Cascadia Mono", sans-serif;
+
                                         background-color: rgb(92, 92, 255);
                                         --color: white;
                                         --back: rgb(11, 7, 44);
@@ -323,7 +323,6 @@
                                     align-items: center;
                                     gap: 5px;
                                     padding: 10px;
-                                    font-family: "Cascadia Mono", sans-serif;
                                     background-color: rgb(92, 92, 255);
                                     --color: white;
                                     --back: rgb(11, 7, 44);
@@ -451,7 +450,6 @@
                                     align-items: center;
                                     gap: 5px;
                                     padding: 10px;
-                                    font-family: "Cascadia Mono", sans-serif;
                                     background-color: rgb(92, 92, 255);
                                     --color: white;
                                     --back: rgb(11, 7, 44);

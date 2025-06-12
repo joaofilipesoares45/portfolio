@@ -104,7 +104,6 @@
     header {
         position: sticky;
         top: 0px;
-        font-family: "Cascadia Mono", sans-serif !important;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -150,7 +149,6 @@
                 align-items: center;
                 gap: 5px;
                 padding: 10px;
-                font-family: "Cascadia Mono", sans-serif;
                 --color: white;
                 --back: rgb(11, 7, 44);
 
@@ -274,9 +272,9 @@
     }
 
     main {
-        font-family: "Cascadia Mono", sans-serif !important;
-
+        
         .banner {
+            
             min-height: calc(100vh - (76px));
             display: flex;
             flex-direction: row;
@@ -290,6 +288,10 @@
             position: relative;
             animation: var(--show-top);
             height: max-content;
+
+            * {
+                font-family: "Cascadia mono", sans-serif !important;
+            }
 
             .animated-arrow {
                 display: flex;
@@ -341,11 +343,10 @@
                 flex-direction: column;
                 align-items: center;
                 color: white;
-                font-family: "Cascadia Mono", sans-serif !important;
                 border-bottom: solid 3px rgb(255, 255, 255);
                 padding-bottom: 20px;
                 position: relative;
-                font-size: 1.5rem;
+                font-size: 1.8rem;
 
                 &::after {
                     content: "";
@@ -526,7 +527,6 @@
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        font-family: "Cascadia Mono", sans-serif !important;
         background-color: rgb(0, 6, 63);
         color: white;
         width: 100%;
@@ -569,7 +569,6 @@
     }
 
     .sidebar {
-        font-family: "Cascadia Mono", sans-serif;
         background-color: rgba(0, 0, 0, 0.856);
         backdrop-filter: blur(2px);
 
@@ -641,7 +640,6 @@
         .content {
             width: calc(100% - 20px);
             max-width: 500px;
-            font-family: "Cascadia Mono", sans-serif;
             background-color: white;
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.672);
             padding: 10px;
@@ -892,8 +890,6 @@
         }
 
         main {
-            font-family: "Cascadia Mono", sans-serif !important;
-
             .banner {
                 min-height: calc(100vh - (76px));
                 display: flex;
@@ -926,11 +922,10 @@
                     flex-direction: column;
                     align-items: center;
                     color: white;
-                    font-family: "Cascadia Mono", sans-serif !important;
                     border-bottom: solid 3px rgb(255, 255, 255);
                     padding-bottom: 20px;
                     position: relative;
-                    font-size: 1rem;
+                    font-size: 1.3rem;
 
                     &::after {
                         content: "";
@@ -1111,7 +1106,6 @@
             display: flex;
             align-items: center;
             justify-content: space-evenly;
-            font-family: "Cascadia Mono", sans-serif !important;
             background-color: rgb(0, 6, 63);
             color: white;
             width: 100%;
@@ -1154,7 +1148,6 @@
         }
 
         .sidebar {
-            font-family: "Cascadia Mono", sans-serif;
             background-color: rgba(0, 0, 0, 0.856);
             backdrop-filter: blur(2px);
 
@@ -1226,7 +1219,6 @@
             .content {
                 width: calc(100% - 20px);
                 max-width: 500px;
-                font-family: "Cascadia Mono", sans-serif;
                 background-color: white;
                 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.672);
                 padding: 10px;
@@ -1380,8 +1372,6 @@
         }
 
         main {
-            font-family: "Cascadia Mono", sans-serif !important;
-
             .banner {
                 display: flex;
                 flex-direction: column;
@@ -1410,7 +1400,6 @@
                     flex-direction: column;
                     align-items: center;
                     color: white;
-                    font-family: "Cascadia Mono", sans-serif !important;
                     border-bottom: solid 3px rgb(255, 255, 255);
                     padding-bottom: 20px;
                     width: 80%;
@@ -1502,7 +1491,6 @@
             display: flex;
             align-items: center;
             justify-content: space-evenly;
-            font-family: "Cascadia Mono", sans-serif !important;
             background-color: rgb(0, 6, 63);
             color: white;
             width: 100%;
@@ -1629,8 +1617,6 @@
         }
 
         main {
-            font-family: "Cascadia Mono", sans-serif !important;
-
             .banner {
                 min-height: calc(100dvh - 76px);
                 display: flex;
@@ -1650,12 +1636,11 @@
                     flex-direction: column;
                     align-items: center;
                     color: white;
-                    font-family: "Cascadia Mono", sans-serif !important;
                     border-bottom: solid 3px rgb(255, 255, 255);
                     padding-bottom: 20px;
                     width: 80%;
                     position: relative;
-                    font-size: 1rem;
+                    font-size: 1.2rem;
 
                     &::after {
                         content: "";
@@ -1750,7 +1735,6 @@
             display: flex;
             align-items: center;
             justify-content: space-evenly;
-            font-family: "Cascadia Mono", sans-serif !important;
             background-color: rgb(0, 6, 63);
             color: white;
             width: 100%;

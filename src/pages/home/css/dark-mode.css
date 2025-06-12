@@ -6,8 +6,6 @@
     }
 
     main {
-        font-family: "Noto Sans", sans-serif;
-
         .banner {
             background-color: rgba(68, 86, 188, 0.286);
         }
@@ -143,7 +141,6 @@
     }
 
     .sidebar {
-        font-family: "Cascadia Mono", sans-serif;
         
         .content {
             color: white;
@@ -253,8 +250,6 @@
     }
 
     .modal.view-project {
-        font-family: "Cascadia Mono", sans-serif !important;
-        
         display: flex;
         justify-content: center;
         align-items: center;
@@ -333,8 +328,6 @@
                         }
                     }
                 }
-
-
             }
         }
     }
