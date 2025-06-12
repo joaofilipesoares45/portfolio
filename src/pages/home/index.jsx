@@ -40,7 +40,7 @@ export default function Home() {
 
         const { target } = e
 
-        if (target.tagName === "A" || target.tagName === "svg") {
+        if (target.tagName === "A" || target.tagName === "svg" || target.classList[0] === "animated-arrow") {
             const element = document.querySelector(target.getAttribute("href"))
             document.querySelector(".page.home").scrollTo(0, element.offsetTop - 65)
         }
@@ -61,7 +61,7 @@ export default function Home() {
             const alturaJanela = window.innerHeight;
             const sects = document.querySelectorAll(".page.home .sect")
             sects.forEach((item) => {
-                const rect = item.getBoundingClientRect();            
+                const rect = item.getBoundingClientRect();
                 if (rect.top < alturaJanela) {
                     setTimeout(() => item.setAttribute("visible", ""))
                 } else {
@@ -104,29 +104,31 @@ export default function Home() {
 
             <main>
                 <div className="banner">
-                    <div className="animated-arrow" onClick={goTo}>
-                        <FontAwesomeIcon icon={faArrowDown} href="#sobre" />
+                    <img src={"/portfolio/logo_1.jpg"} alt="" />
+                    <div className="text">
+                        <h1>
+                            João Filipe
+                            <span>{"<"} Desenvolvedor Front-end {"/>"}</span>
+                        </h1>
+                        <h2>
+                            <button onClick={openLink} link="https://github.com/joaofilipesoares45/">
+                                <FontAwesomeIcon icon={faGithub} />
+                            </button>
+                            <button onClick={openLink} link="https://www.linkedin.com/in/joão-filipe-viana-63abb1263/">
+                                <FontAwesomeIcon icon={faLinkedin} />
+                            </button>
+                            <button onClick={openLink} link="https://www.instagram.com/lippe_viana_01/">
+                                <FontAwesomeIcon icon={faInstagram} />
+                            </button>
+                            <button onClick={() => whatsMsg("86988667039", "Olá, vim pelo Portfólio!")} >
+                                <FontAwesomeIcon icon={faWhatsapp} />
+                            </button>
+                        </h2>
+                        <div className="animated-arrow" onClick={goTo} href="#sobre">
+                            <span>about me</span>
+                            <FontAwesomeIcon icon={faArrowDown} />
+                        </div>
                     </div>
-
-                    <h1>
-                        <img src={"/portfolio/logo_1.jpg"} alt="" />
-                        João Filipe
-                        <span>{"<"} Desenvolvedor Front-end {"/>"}</span>
-                    </h1>
-                    <h2>
-                        <button onClick={openLink} link="https://github.com/joaofilipesoares45/">
-                            <FontAwesomeIcon icon={faGithub} />
-                        </button>
-                        <button onClick={openLink} link="https://www.linkedin.com/in/joão-filipe-viana-63abb1263/">
-                            <FontAwesomeIcon icon={faLinkedin} />
-                        </button>
-                        <button onClick={openLink} link="https://www.instagram.com/lippe_viana_01/">
-                            <FontAwesomeIcon icon={faInstagram} />
-                        </button>
-                        <button onClick={() => whatsMsg("86988667039", "Olá, vim pelo Portfólio!")} >
-                            <FontAwesomeIcon icon={faWhatsapp} />
-                        </button>
-                    </h2>
                     <footer>
                         <div className="marquee">
                             <span>
