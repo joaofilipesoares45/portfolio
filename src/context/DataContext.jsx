@@ -1,13 +1,15 @@
 import { createContext, useEffect, useState } from "react";
 import { firestore } from "../../firebase/app_firebase";
 import { collection, getDocs } from "firebase/firestore"
-import { openModal } from "../utils/functions";
+import { openModal, sortList } from "../utils/functions";
 
 export const DataContext = createContext();
 
 const getData = async (ref, set) => {
     const res = await getDocs(ref);
-    set(res.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+
+    const list = res.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    set(sortList(list, "index"))
 }
 
 export function DataProvider({ children }) {
@@ -23,7 +25,7 @@ export function DataProvider({ children }) {
         }
     }, [])
 
-    useEffect(() => {
+    useEffect( () => {
         getData(collection(firestore, 'projetos'), setProjetos)
     }, [])
 

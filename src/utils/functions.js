@@ -79,7 +79,7 @@ export const whatsMsg = (number, msg) => {
 }
 
 export const openLink = ({ target }) => {
-    
+
     if (target.tagName) {
         const link = target.getAttribute('link')
         window.open(link)
@@ -111,6 +111,10 @@ export const logOut = () => {
     localStorage.removeItem("portfolio:user")
 }
 
-export const listTags = [{name: "html", tag: "html"},{name: "css", tag: "css"},{name: "js", tag: "javaScript"},{name: "react", tag: "react"},{name: "vue", tag: "vueJs"},{name: "git", tag: "git"},{name: "github", tag: "gitHub"}]
+export const sortList = (list, v) => {
+    return list.sort((a,b) => a[v] - b[v])
+}
+
+export const listTags = [{ name: "html", tag: "html" }, { name: "css", tag: "css" }, { name: "tw", tag: "tailwind", color: "green" }, { name: "js", tag: "javaScript" }, { name: "react", tag: "react" }, { name: "vue", tag: "vueJs" }, { name: "git", tag: "git" }, { name: "github", tag: "gitHub" }]
 
 export const baseUrl = '/portfolio/#'

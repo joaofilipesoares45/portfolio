@@ -430,6 +430,7 @@
             padding: 10px;
             background-color: rgb(76, 156, 255);
             box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.407);
+            color: rgb(0, 0, 134);
             padding-block: 30px;
             transition: .3s;
             animation: var(--show-down);

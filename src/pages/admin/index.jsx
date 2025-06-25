@@ -1,5 +1,5 @@
 import "./css/index.css"
-import { baseUrl, openModal } from "../../utils/functions";
+import { baseUrl, formCaptureData, openModal } from "../../utils/functions";
 import NewProject from "./components/NewProject";
 import Projetos from "./components/projetos";
 import { useContext, useEffect } from "react";
@@ -29,6 +29,13 @@ export default function AdminPage() {
         getUser()
     }, [usuarioAtual, navigate])
 
+    const newTag = (event) => {
+        const { target } = event
+        const data = formCaptureData(target)
+        console.log(data);
+        
+    }
+
     return (
         <div className="page admin">
             <header>
@@ -39,7 +46,22 @@ export default function AdminPage() {
             </header>
             <NewProject />
             <Projetos />
-            <Usuarios/>
+            <Usuarios />
+
+            <div className="add-tag">
+                <form onSubmit={newTag}>
+                    <div className="inputs">
+                        <div>
+                            <label htmlFor="nome">nome</label>
+                            <input type="text" id="nome" name="nome"/>
+                        </div>
+                        <div>
+                            <label htmlFor="cor">cor</label>
+                            <input type="color" id="cor" name="cor"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
 
             <Slide len={3}>
                 {[1, 2, 3].map((item, index) => {

@@ -1,4 +1,4 @@
-import { openModal, whatsMsg } from "../../../utils/functions";
+import { listTags, openModal, whatsMsg } from "../../../utils/functions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleDown, faArrowUpRightFromSquare, faCircleUser, faGear } from "@fortawesome/free-solid-svg-icons"
 import "../css/sobre.css"
@@ -20,13 +20,10 @@ export default function Sobre() {
                         <h3>Como programador me especializei na criação de interfaces digitais que sejam rapidas, fluidas e praticas.</h3>
                         <p>Algumas tecnologias que uso no desenvolvimento são: </p>
                         <div className="llll">
-                            <span className="tec html">Html</span>
-                            <span className="tec css">Css</span>
-                            <span className="tec js">JavaScript</span>
-                            <span className="tec react">React</span>
-                            <span className="tec vue">VueJs</span>
-                            <span className="tec git">Git</span>
-                            <span className="tec github">GitHub</span>
+                            {listTags.map(({ name, tag }) => {
+                                return <span className={`tec ${name}`} key={`tec ${name}`}>{tag}</span>
+                            })}
+
                         </div>
                         <div className="contact">
                             <span>Informações de contado:</span>
