@@ -116,7 +116,6 @@
             padding: 10px 11px;
             /* background-color: rgb(255, 255, 255); */
             color: rgba(0, 0, 0, 0.483);
-            ;
             border-radius: 50%;
             display: none;
         }
@@ -1316,10 +1315,10 @@
 
                 a {
                     text-wrap: nowrap;
-                    font-size: .6rem;
+                    font-size: .7rem;
                     font-weight: 600;
                     color: white;
-                    background-color: rgba(220, 220, 220, 0.119);
+                    
                     padding: 10px;
                     transition: .2s;
 
@@ -1551,6 +1550,7 @@
 
             svg.fa-bars {
                 display: block;
+                color: white;
             }
 
             nav {

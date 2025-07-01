@@ -60,6 +60,7 @@
                             margin-bottom: 10px;
                             overflow: hidden;
                             border-radius: 5px;
+                            max-width: 100%;
 
                             &[load]::after {
                                 opacity: 0;
@@ -84,7 +85,6 @@
 
                             img {
                                 max-width: 100%;
-
                             }
                         }
 
@@ -112,6 +112,7 @@
                             div {
                                 display: flex;
                                 gap: 5px;
+                                font-size: .5rem !important;
                             }
                         }
 
@@ -196,15 +197,17 @@
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: center;
-                        gap: 30px;
+                        gap: 10px;
                         margin-bottom: 30px;
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
 
                         div.card {
                             display: flex;
                             flex-direction: column;
                             align-items: center;
                             padding: 10px;
-                            width: 350px;
+                            width: 100%;
                             background-color: white;
                             border-radius: 3px;
                             border: solid 2px rgb(0, 0, 141);
@@ -215,23 +218,28 @@
                                 scale: 1.003;
                             }
 
+                            .img {
+                                min-height: (100% + 100px);
+                            }
+
                             .info {
                                 width: 100%;
 
                                 h4 {
-                                    font-size: 1.3rem;
+                                    font-size: 1rem;
                                     margin-bottom: 10px;
                                 }
 
                                 p {
                                     word-break: break-word;
-                                    font-size: .9rem;
+                                    font-size: .7rem;
                                     margin-bottom: 10px;
                                 }
 
                                 div {
                                     display: flex;
                                     gap: 5px;
+                                    display: none;
                                 }
                             }
 
@@ -273,18 +281,18 @@
                     }
 
                     .list {
-                        display: flex;
+
                         flex-wrap: wrap;
                         justify-content: center;
-                        gap: 30px;
+                        gap: 8px;
                         margin-bottom: 30px;
 
                         div.card {
                             display: flex;
                             flex-direction: column;
                             align-items: center;
-                            padding: 10px;
-                            width: 350px;
+                            padding: 5px;
+
                             background-color: white;
                             border-radius: 3px;
                             border: solid 2px rgb(0, 0, 141);
@@ -299,40 +307,44 @@
                                 }
                             }
 
-                            img {
-                                max-width: 100%;
-                                border-radius: 5px;
-                                margin-bottom: 10px;
-
-                                &::after {
-                                    content: "";
-                                    width: 100%;
-                                    height: 100%;
-                                    position: absolute;
-                                    background-color: black;
-                                }
-                            }
 
                             .info {
                                 width: 100%;
 
                                 h4 {
-                                    font-size: 1.3rem;
+                                    font-size: .72rem;
                                     margin-bottom: 10px;
                                 }
 
                                 p {
+                                    font-weight: 500;
                                     word-break: break-word;
-                                    font-size: .9rem;
+                                    font-size: .55rem;
                                     margin-bottom: 10px;
                                 }
+                            }
 
-                                div {
-                                    display: flex;
-                                    gap: 5px;
+                            nav {
+                                flex-direction: row;
+                                top: 0px;
+                                right: 0px;
+
+                                svg {
+                                    font-size: .5rem !important;
+                                    padding: 10px 10.5px;
+
+                                    &.fa-link {
+                                        padding: 10px 9px !important;
+                                    }
+
+                                    &.fa-image {
+                                        padding: 10px !important;
+                                    }
                                 }
                             }
                         }
+
+
                     }
                 }
             }

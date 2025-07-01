@@ -19,10 +19,11 @@
                 }
 
                 .list {
-                    display: flex;
-                    justify-content: space-evenly;
-                    flex-wrap: wrap;
-                    gap: 10px;
+                    display: grid;
+                    justify-items: center;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 20px;
+                    padding: 10px;
 
                     .item {
                         display: flex;
@@ -30,26 +31,14 @@
                         align-items: center;
                         justify-content: center;
                         width: 100%;
-                        max-width: 350px;
-                        padding: 50px 10px;
-                        color: white;
+                        padding: 50px 30px;
+                        color: rgb(0, 0, 0);
                         border-radius: 5px;
-                        text-shadow: 0 0 5px rgba(0, 0, 0, 0.434);
+                        
                         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.33);
                         transition: .2s;
-
-                        &:nth-child(1) {
-                            background-color: rgba(221, 30, 30, 0.748);
-                        }
-
-                        &:nth-child(2) {
-                            background-color: rgba(14, 167, 0, 0.748);
-                        }
-
-                        &:nth-child(3) {
-                            background-color: rgb(242, 190, 21, 0.748);
-                        }
-
+                        background-color: rgb(199, 229, 255);
+                        
                         h3 {
                             display: flex;
                             flex-direction: column;
@@ -149,10 +138,10 @@
                     }
 
                     .list {
-                        display: flex;
-                        justify-content: space-evenly;
-                        flex-wrap: wrap;
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
                         gap: 10px;
+                        padding: 0px;
 
                         .item {
                             display: flex;
@@ -160,30 +149,16 @@
                             align-items: center;
                             justify-content: center;
                             width: 100%;
-                            max-width: 350px;
                             padding: 50px 10px;
-                            color: white;
                             border-radius: 5px;
-                            text-shadow: 0 0 5px rgba(0, 0, 0, 0.434);
                             box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.33);
                             transition: .2s;
-
-                            &:nth-child(1) {
-                                background-color: rgba(221, 30, 30, 0.748);
-                            }
-
-                            &:nth-child(2) {
-                                background-color: rgba(14, 167, 0, 0.748);
-                            }
-
-                            &:nth-child(3) {
-                                background-color: rgb(242, 190, 21, 0.748);
-                            }
 
                             h3 {
                                 display: flex;
                                 flex-direction: column;
                                 margin-bottom: 15px;
+                                text-align: center;
 
                                 svg {
                                     font-size: 2rem;
@@ -193,7 +168,7 @@
 
                             p {
                                 text-align: center;
-                                font-size: .9rem;
+                                font-size: .7rem;
                             }
 
                             &:hover {
@@ -207,11 +182,12 @@
                         flex-direction: column;
                         align-items: center;
                         gap: 10px;
+                        margin-top: 40px;
 
                         h3 {
                             font-weight: 450;
                             text-align: center;
-                            font-size: .9rem;
+                            font-size: .8rem;
                             width: 100%;
                             max-width: 800px;
                         }
@@ -248,8 +224,6 @@
                                 }
                             }
                         }
-
-
                     }
                 }
             }
@@ -285,46 +259,36 @@
                         flex-wrap: wrap;
                         gap: 10px;
 
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+
                         .item {
                             display: flex;
                             flex-direction: column;
                             align-items: center;
                             justify-content: center;
                             width: 100%;
-                            max-width: 350px;
-                            padding: 50px 10px;
-                            color: white;
+                            padding: 30px 10px;
                             border-radius: 5px;
-                            text-shadow: 0 0 5px rgba(0, 0, 0, 0.434);
                             box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.33);
                             transition: .2s;
-
-                            &:nth-child(1) {
-                                background-color: rgba(221, 30, 30, 0.748);
-                            }
-
-                            &:nth-child(2) {
-                                background-color: rgba(14, 167, 0, 0.748);
-                            }
-
-                            &:nth-child(3) {
-                                background-color: rgb(242, 190, 21, 0.748);
-                            }
 
                             h3 {
                                 display: flex;
                                 flex-direction: column;
+                                text-align: center;
                                 margin-bottom: 15px;
+                                font-size: .8rem;
 
                                 svg {
-                                    font-size: 2rem;
+                                    font-size: 1.5rem;
                                     margin-bottom: 10px;
                                 }
                             }
 
                             p {
                                 text-align: center;
-                                font-size: .9rem;
+                                font-size: .6rem;
                             }
 
                             &:hover {
@@ -342,9 +306,9 @@
                         h3 {
                             font-weight: 450;
                             text-align: center;
-                            font-size: .9rem;
                             width: 100%;
                             max-width: 800px;
+                            font-size: .7rem;
                         }
 
                         form {
@@ -355,7 +319,7 @@
                             textarea {
                                 width: 100%;
                                 min-height: 100px;
-                                font-size: 1rem;
+                                font-size: .9rem;
                                 padding: 10px;
                                 border-radius: 5px;
                                 outline: none;

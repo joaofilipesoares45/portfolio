@@ -76,7 +76,7 @@ export default function Projetos() {
                         const { nome, link, resumo, tecnologias, imgs } = item
                         return (
                             <div className="card" key={"project" + index}>
-                                <div className="img" style={{ width: 326.8, minHeight: 183.75 }}>
+                                <div className="img" style={{ width: 326.8, minHeight: "fit-content"}}>
                                     <img src={imgs[0]} alt="" onLoad={({ target }) => {
                                         target.parentElement.setAttribute("load", "")
                                     }} />

@@ -60,11 +60,11 @@
                             display: flex;
                             flex-direction: column;
                             align-items: flex-start;
-                            text-align: start;
+                            text-align: center;
                             text-wrap: nowrap;
                             flex-wrap: wrap;
 
-                            font-size: 1.8rem;
+                            font-size: 1.9rem;
                             margin-bottom: 20px;
 
                             p {
@@ -75,6 +75,7 @@
 
                         h3+p {
                             align-self: flex-start;
+                            text-align: center;
                         }
 
                         .top {
@@ -83,18 +84,38 @@
                             align-items: center;
 
                             h3 {
+                                font-size: .9rem;
                                 font-weight: 500;
+                            }
+
+                            nav {
+                                display: flex;
+                                gap: 10px;
+                                justify-content: center;
+
+                                button {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 5px;
+                                    padding: 10px;
+
+                                    background-color: rgb(92, 92, 255);
+                                    --color: white;
+                                    --back: rgb(11, 7, 44);
+
+                                    svg {
+                                        transition: initial;
+                                    }
+                                }
                             }
 
                             .contact {
                                 display: flex;
                                 flex-direction: column;
-                                margin-top: 10px;
-                                padding: 20px;
+                                margin-top: 20px;
                                 border-radius: 5px;
                                 gap: 10px;
                                 width: 100%;
-                                background-color: rgba(255, 255, 255, 0.157);
 
                                 div {
                                     display: grid;
@@ -106,6 +127,9 @@
                                         flex-direction: column;
                                         font-size: 1rem;
                                         font-weight: 400;
+                                        padding: 10px;
+                                        border-radius: 5px;
+                                        background-color: rgba(255, 255, 255, 0.679);
 
                                         span {
                                             font-size: .9rem;
@@ -117,27 +141,6 @@
                                 p {
                                     align-self: center;
                                     margin-bottom: 0px;
-                                }
-
-                                nav {
-                                    display: flex;
-                                    gap: 10px;
-                                    justify-content: center;
-
-                                    button {
-                                        display: flex;
-                                        align-items: center;
-                                        gap: 5px;
-                                        padding: 10px;
-
-                                        background-color: rgb(92, 92, 255);
-                                        --color: white;
-                                        --back: rgb(11, 7, 44);
-
-                                        svg {
-                                            transition: initial;
-                                        }
-                                    }
                                 }
                             }
 
@@ -225,7 +228,6 @@
                             border-radius: 5px;
                         }
 
-
                         .declare {
                             display: flex;
                             flex-direction: column;
@@ -253,7 +255,6 @@
                                     display: flex;
                                     flex-direction: column;
                                     margin-top: 10px;
-                                    padding: 10px;
                                     border-radius: 5px;
                                     gap: 10px;
                                     width: 100%;
@@ -289,7 +290,7 @@
 
                                 p {
                                     font-size: .8rem;
-                                    margin-bottom: 10px;
+                                    margin-bottom: 20px;
                                     text-wrap: wrap;
 
                                     &.pppp {
@@ -353,7 +354,6 @@
                         gap: 20px;
                         height: 100%;
 
-
                         .declare {
                             display: flex;
                             flex-direction: column;
@@ -361,6 +361,8 @@
                             max-width: max-content;
 
                             h2 {
+                                display: flex;
+                                align-items: center;
                                 align-self: center;
                                 font-size: 1.3rem;
                                 margin-bottom: 20px;
@@ -371,15 +373,18 @@
                                 flex-direction: column;
                                 align-items: center;
 
+                                h3 {
+                                    padding-inline: 5px;
+                                    font-size: .9rem;
+                                }
+
                                 .contact {
                                     display: flex;
                                     flex-direction: column;
-                                    margin-top: 10px;
-                                    padding: 10px;
+                                    margin-top: 20px;
                                     border-radius: 5px;
                                     gap: 10px;
                                     width: 100%;
-                                    background-color: rgba(255, 255, 255, 0.157);
 
                                     div {
                                         display: grid;
