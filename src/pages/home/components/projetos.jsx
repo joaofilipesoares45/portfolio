@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { DataContext } from "../../../context/DataContext";
 import { openLink, openModal, whatsMsg } from "../../../utils/functions";
 import "../css/projetos.css";
+import TecBrand from "../../../components/TecBrand";
 
 export default function Projetos() {
 
@@ -52,7 +53,7 @@ export default function Projetos() {
                                     <div>
                                         {tecnologias.map((el) => {
                                             return (
-                                                <span className={"tec " + el} key={el + "tecc"}>{el}</span>
+                                                <TecBrand name={el} tag={"false"}/>
                                             )
                                         })}
                                     </div>
@@ -76,7 +77,7 @@ export default function Projetos() {
                         const { nome, link, resumo, tecnologias, imgs } = item
                         return (
                             <div className="card" key={"project" + index}>
-                                <div className="img" style={{ width: 326.8, minHeight: "fit-content"}}>
+                                <div className="img" style={{ width: "fit-content", minHeight: 183.75}}>
                                     <img src={imgs[0]} alt="" onLoad={({ target }) => {
                                         target.parentElement.setAttribute("load", "")
                                     }} />
@@ -85,9 +86,9 @@ export default function Projetos() {
                                     <h4>{nome}</h4>
                                     <p>{resumo}</p>
                                     <div>
-                                        {tecnologias.map((el) => {
+                                        {tecnologias.map((el) => {                                            
                                             return (
-                                                <span className={"tec " + el} key={el + "tecc"}>{el}</span>
+                                                <TecBrand name={el}/>
                                             )
                                         })}
                                     </div>

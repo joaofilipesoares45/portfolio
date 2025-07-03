@@ -4,6 +4,7 @@ import styles from "./Slide.module.css"
 export default function Slide({ len, children }) {
     const [position, setPosition] = useState()
     const list = useRef(null)
+    const [vis, setVis] = useState(1)
 
     const slideRoller = (value) => {
         const listSlide = document.querySelectorAll(`.${styles.list} .item`)
@@ -43,6 +44,7 @@ export default function Slide({ len, children }) {
 
         listBtns.forEach(el => el.removeAttribute("selected"))
         listBtns[positions.to].setAttribute("selected", "true")
+        setVis(positions.to + 1)
     }
 
     useEffect(() => {
@@ -106,6 +108,12 @@ export default function Slide({ len, children }) {
                     )
                 })}
             </nav>
+
+            <div className={styles.info}>
+                <span>
+                    {vis}/{len}
+                </span>
+            </div>
         </div>
     )
 }

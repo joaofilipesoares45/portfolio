@@ -11,11 +11,15 @@ export default function ViewProject() {
     const { projeto, setProjeto } = useContext(DataContext)
 
     return (
-        <div className="modal view-project">
+        <div className="modal view-project" onClick={({ target }) => {
+            if (target.classList[1] === "view-project") {
+                closeModal()
+            }
+        }}>
             {projeto &&
                 <div className="content">
+                    <FontAwesomeIcon icon={faXmark} onClick={() => { closeModal("view-project"); setProjeto() }} />
                     <div className="main">
-                        <FontAwesomeIcon icon={faXmark} onClick={() => { closeModal("view-project"); setProjeto() }} />
                         <Slide len={projeto.imgs.length}>
                             {projeto.imgs.map((item, index) => {
                                 return (

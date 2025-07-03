@@ -1,17 +1,24 @@
 import { openModal, whatsMsg } from "../../../utils/functions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleDown, faArrowUpRightFromSquare, faCircleUser, faGear } from "@fortawesome/free-solid-svg-icons"
+import { faArrowAltCircleDown, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 import "../css/sobre.css"
+import TecBrand from "../../../components/TecBrand";
 
 export default function Sobre() {
     return (
         <section className="sect sobre" id="sobre">
             <div className="info">
                 <div className="img">
-                    <FontAwesomeIcon icon={faGear} className="small" />
-                    <FontAwesomeIcon icon={faGear} />
-                    <FontAwesomeIcon icon={faCircleUser} />
                     <img src={"/portfolio/about3.jpg"} alt="" />
+                    <div className="brands">
+                        <TecBrand name={"html"} />
+                        <TecBrand name={"css"} />
+                        <TecBrand name={"js"} />
+                        <TecBrand name={"react"} />
+                        <TecBrand name={"vue"} />
+                        <TecBrand name={"git"} />
+                        <TecBrand name={"github"} />
+                    </div>
                 </div>
 
                 <div className="declare">
@@ -28,12 +35,12 @@ export default function Sobre() {
                             </div>
 
                             <p className="pppp">Download do currículo - link para contato: </p>
-                        <nav>
-                            <button onClick={() => openModal("download-cv")}>Baixar CV <FontAwesomeIcon icon={faArrowAltCircleDown} /></button>
-                            <button onClick={() => whatsMsg("86988667039", "Olá vim pelo portfólio!")}>Contatar <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
-                        </nav>
+                            <nav>
+                                <button onClick={() => openModal("download-cv")}>Baixar CV <FontAwesomeIcon icon={faArrowAltCircleDown} /></button>
+                                <button onClick={() => whatsMsg("86988667039", "Olá vim pelo portfólio!")}>Contatar <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
+                            </nav>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

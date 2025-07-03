@@ -44,3 +44,23 @@
         }
     }
 }
+
+.info {
+    position: absolute;
+    bottom: 8px;
+    left: 5px;
+    
+    span {
+        background-color: white;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.335);
+        font-size: .7rem;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 510px) {
+    .nav {
+        display: none;
+    }
+}

@@ -10,35 +10,35 @@
 
                     .img {
                         display: flex;
+                        flex-direction: column;
                         align-self: center;
                         position: relative;
                         border-radius: 5px;
-                        overflow: hidden;
+                        /* overflow: hidden; */
+                        box-shadow: 0 0 5px rgba(0, 0, 0, 0.387) !important;
+                        background-color: white;
+
+                        .brands {
+                            display: flex;
+                            justify-content: flex-end;
+                            padding: 10px;
+                            padding-top: 0;
+                            gap: 15px;
+                            bottom: 5px;
+                            right: 5px;
+                            border-radius: 5px;
+
+                            background: linear-gradient(transparent, rgba(86, 100, 255, 0.245));
+                        }
 
                         svg {
-                            position: absolute;
-                            color: blue;
-                            font-size: 3rem;
-                            pointer-events: none;
+                            font-size: 1.5rem;
+                            color: rgb(0, 0, 151);
 
-                            &.fa-gear {
-                                animation: spin 3s linear infinite;
-                                left: 30px;
-                                bottom: 30px;
-
-                                &.small {
-                                    font-size: 2rem;
-                                    left: 75px;
-                                    bottom: 28px;
-                                    animation: spin 3s linear infinite reverse;
-                                }
-                            }
-
-                            &.fa-circle-user {
-                                top: 15px;
-                                right: 15px;
-                                font-size: 1.5rem;
-                                /* animation: shake 1s linear infinite; */
+                            &.up {
+                                position: absolute;
+                                pointer-events: none;
+                                font-size: 3rem;
                             }
                         }
                     }
@@ -99,7 +99,8 @@
                                     gap: 5px;
                                     padding: 10px;
 
-                                    background-color: rgb(92, 92, 255);
+                                    background-color: rgba(255, 255, 255, 0.679);
+                                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.174);
                                     --color: white;
                                     --back: rgb(11, 7, 44);
 
@@ -197,11 +198,9 @@
                             position: relative;
 
                             svg {
-                                position: absolute;
-                                color: blue;
-
-                                font-size: 3rem;
-                                pointer-events: none;
+                                &.up {
+                                    pointer-events: none;
+                                }
 
                                 &.fa-gear {
                                     left: 15px;
@@ -258,6 +257,7 @@
                                     border-radius: 5px;
                                     gap: 10px;
                                     width: 100%;
+                                    margin-bottom: 20px;
 
                                     div {
                                         display: grid;
@@ -281,8 +281,8 @@
 
                                         button {
                                             gap: 5px;
-                                            padding: 7px;
-                                            font-size: .7rem !important;
+                                            padding: 10px;
+                                            font-size: .9rem !important;
                                         }
                                     }
                                 }
@@ -410,8 +410,8 @@
 
                                         button {
                                             gap: 5px;
-                                            padding: 7px;
-                                            font-size: .7rem !important;
+                                            padding: 10px;
+                                            font-size: .75rem !important;
                                         }
                                     }
                                 }

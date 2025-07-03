@@ -1,0 +1,47 @@
+.div {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    &:hover::after,
+    &:hover::before {
+        opacity: 1;
+    }
+
+    &[open=false] {
+        padding: 20px;
+        background-color: red;
+
+
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: calc(100% + 6px);
+        background-color: white;
+        rotate: 45deg;
+        padding: 5px;
+        opacity: 0;
+        transition: .1s;
+    }
+
+    &::after {
+        content: attr(name);
+        position: absolute;
+        top: calc(100% + 10px);
+        z-index: 1;
+        opacity: 0;
+
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.248);
+        color: black;
+        font-family: "Cascadia Mono";
+        font-size: .8rem;
+        transition: .1s;
+
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+}

@@ -2,25 +2,62 @@
     main {
         .sect {
             &.habilidades {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+
                 .head {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    margin-bottom: 15px;
+                    grid-area: top;
 
                     h2 {
                         font-size: 1.8rem;
-                        margin-bottom: 15px;
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        text-align: center;
+                        font-weight: 450;
+                        font-size: .9rem;
                     }
                 }
 
                 .list {
-                    margin-top: 20px;
                     display: flex;
-                    justify-content: center;
-                    gap: 10px;
+                    flex-direction: column;
+                    gap: 20px;
+                    padding: 20px 30px;
+                    border-radius: 3px;
+                    background-color: rgba(240, 248, 255, 0.355);
 
-                    span {
-                        font-size: 1rem;
+                    p {
+                        text-align: center;
+                        font-weight: 550;
+                    }
+
+                    div {
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        gap: 20px;
+                    }
+
+                    svg {
+                        width: 30px;
+                        height: 30px;
+                        padding: 15px;
+                        border-radius: 10px;
+                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.064);
+                        background-color: white;
+                        font-size: 2rem;
+
+                        &:hover {
+                            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.248);
+                        }
                     }
                 }
             }
@@ -33,6 +70,9 @@
         main {
             .sect {
                 &.habilidades {
+                    display: flex;
+                    flex-direction: column;
+
                     .head {
                         display: flex;
                         flex-direction: column;
@@ -40,19 +80,11 @@
 
                         h2 {
                             font-size: 1.8rem;
-                            margin-bottom: 15px;
                         }
                     }
 
                     .list {
-                        margin-top: 20px;
-                        display: flex;
-                        justify-content: center;
-                        gap: 10px;
-
-                        span {
-                            font-size: 1rem;
-                        }
+                        gap: 15px;
                     }
                 }
             }
@@ -72,20 +104,11 @@
 
                         h2 {
                             font-size: 1.8rem;
-                            margin-bottom: 15px;
                         }
                     }
 
                     .list {
-                        margin-top: 20px;
-                        display: flex;
-                        justify-content: center;
-                        flex-wrap: wrap;
-                        gap: 10px;
-
-                        span {
-                            font-size: .7rem;
-                        }
+                        gap: 15px;
                     }
                 }
             }
