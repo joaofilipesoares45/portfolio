@@ -94,6 +94,7 @@ export default function Slide({ len, children }) {
                     }
                 })
                 listSlide[Number(target.id)].setAttribute("visible", "true")
+                setVis(Number(target.id) + 1)
                 if (actual < Number(target.id)) {
                     listSlide[actual + 1].setAttribute("side", "left")
                 }
