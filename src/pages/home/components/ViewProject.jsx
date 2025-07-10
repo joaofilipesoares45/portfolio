@@ -14,11 +14,12 @@ export default function ViewProject() {
         <div className="modal view-project" onClick={({ target }) => {
             if (target.classList[1] === "view-project") {
                 closeModal()
+                setProjeto()
             }
         }}>
             {projeto &&
                 <div className="content">
-                    <FontAwesomeIcon icon={faXmark} onClick={() => { closeModal("view-project"); setProjeto() }} />
+                    
                     <div className="main">
                         <Slide len={projeto.imgs.length}>
                             {projeto.imgs.map((item, index) => {
@@ -31,7 +32,7 @@ export default function ViewProject() {
                                 )
                             })}
                         </Slide>
-                    </div>
+                    </div><FontAwesomeIcon icon={faXmark} onClick={() => { closeModal("view-project"); setProjeto() }} />
                 </div>
             }
         </div>
