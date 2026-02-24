@@ -48,7 +48,7 @@ export default function Projetos() {
                                     }} />
                                 </div>
                                 <div className="info">
-                                    <h4>{nome}</h4>
+                                    <h4>{nome} <span> <img src={`${item.link}/icon.png`} alt="" className="a"/></span></h4>
                                     <p>{resumo}</p>
                                     <div>
                                         {tecnologias.map((el) => {

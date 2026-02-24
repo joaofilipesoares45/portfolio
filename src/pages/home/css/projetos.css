@@ -98,8 +98,15 @@
                             background-color: rgba(220, 220, 220, 0.182);
 
                             h4 {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
                                 font-size: 1.3rem;
                                 margin-bottom: 10px;
+
+                                img{
+                                    width: 20px;
+                                }
                             }
 
                             p {
